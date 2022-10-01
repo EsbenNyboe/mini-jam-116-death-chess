@@ -54,11 +54,16 @@ public class TestPlayerControls : MonoBehaviour
         // FUCKING DECELARATION?!?!
         // if (Input.GetKeyUp(KeyCode.A))
         // {
-        //     Vector3 velocityLeftX = new Vector3(-_moveSpeedA, 0f, 0f);
-        //     transform.localPosition += velocityLeftX * Time.deltaTime;
 
-        //     _moveSpeed += acceleration; 
-        //     Mathf.Min
+            // float playerSpeed = (transform.position - this.transform.position).magnitude / Time.time;
+            // transform.localPosition = playerSpeed - acceleration;
+
+            // Vector3 distanceTraveled = new Vector3((this.transform.position).magnitude, 0f, 0f);
+            // float speed = distanceTraveled / (Time.time - Time.timeSinceLevelLoad);
+            
+            // speed = total distance traveled / total time taken
+            // total distance traveled = start position - current position
+
         // }
 
         //move right
