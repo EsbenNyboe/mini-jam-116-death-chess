@@ -29,11 +29,12 @@ public class ProjectileMovement : MonoBehaviour
             {
                 case "Enemy":
                 Debug.Log("Enemy HIT!");
+                other.gameObject.GetComponentInParent<EnemyMovementPawn>().GetKilled();
                 break;
-
-                default:
-                Debug.Log("Not HIT!");
-                break;
+                //
+                // default:
+                // Debug.Log("Not HIT!");
+                // break;
             }    
         }
 

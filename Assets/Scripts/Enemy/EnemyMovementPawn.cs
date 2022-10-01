@@ -75,7 +75,6 @@ public class EnemyMovementPawn : MonoBehaviour
                 if (targetCell.x >= GameGridScript.Instance.width ||
                     targetCell.y >= GameGridScript.Instance.height)
                 {
-                    Debug.Log(transform.position + ": " + currentGridCell + ": " + targetCell);
                     GetKilled();
                     return;
                 }
@@ -139,7 +138,7 @@ public class EnemyMovementPawn : MonoBehaviour
         }
     }
 
-    private void GetKilled()
+    public void GetKilled()
     {
         EnablePhysics(true);
         Destroy(gameObject, timeToClearOccupation + despawnTimer);

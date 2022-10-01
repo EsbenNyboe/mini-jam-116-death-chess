@@ -9,7 +9,7 @@ public class TestPlayerControls : MonoBehaviour
     float _moveVertical = 0f;
     [SerializeField] GameObject projectileSpawn;
     [SerializeField] GameObject meleeSpawn;
-    [SerializeField] Transform playerTransform;
+    [SerializeField] Transform attackTransform;
     [SerializeField] float acceleration = 0.1f;
     [SerializeField] float decelaration = 0.1f;
 
@@ -26,9 +26,9 @@ public class TestPlayerControls : MonoBehaviour
         {
             Vector3 meleePos = new Vector3(0f, 0f, 1f);
             GameObject melee = Instantiate(meleeSpawn,
-            playerTransform.position + meleePos,
+            attackTransform.position + meleePos,
             meleeSpawn.transform.rotation,
-            playerTransform);
+            attackTransform);
             melee.SetActive(true);
         }
     }
@@ -38,8 +38,8 @@ public class TestPlayerControls : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             GameObject projectile = Instantiate(projectileSpawn,
-            playerTransform.position,
-            playerTransform.rotation);
+            attackTransform.position,
+            attackTransform.rotation);
             projectile.SetActive(true);
         }
     }
