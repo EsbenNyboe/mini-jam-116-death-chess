@@ -39,7 +39,7 @@ public class ProjectileMovement : MonoBehaviour
 
     private void ProjectileTrajectory()
     {
-        Vector3 projectilePath = new Vector3(0f, projectileHeight, projectileSpeed);
+        Vector3 projectilePath = new Vector3(- projectileSpeed, projectileHeight, 0);
         transform.localPosition += projectilePath * Time.deltaTime;
     }
 }

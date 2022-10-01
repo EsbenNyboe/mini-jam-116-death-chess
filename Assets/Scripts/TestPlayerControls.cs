@@ -54,23 +54,23 @@ public class TestPlayerControls : MonoBehaviour
 
     private void PlayerVerticalMovement()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.D))
         {
             _moveVertical = 0f;
         }
 
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.A))
         {
             _moveVertical = 0f;
         }
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.D))
         {
             _moveVertical += acceleration;
         }
 
 
-        else if (Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.A))
         {
             _moveVertical -= acceleration;
         }
@@ -84,22 +84,22 @@ public class TestPlayerControls : MonoBehaviour
 
     private void PlayerHorizontalMovement()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             _moveHorizontal = 0f;
         }
 
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.S))
         {
             _moveHorizontal = 0f;
         }
 
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.S))
         {
             _moveHorizontal += acceleration;
         }
 
-        else if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.W))
         {
             _moveHorizontal -= acceleration;
         }
