@@ -44,10 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f898c461007bf04e978e2ad2d118db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  height: 80
-  width: 80
+  height: 11
+  width: 11
   gridSpaceSize: 1
   randRangeMin: 1
   randRangeMax: 1
-  gridCellWhite: {fileID: 1780393639217970029, guid: 8820b3bed192a28499673b2464095192, type: 3}
-  gridCellBlack: {fileID: 1780393639217970029, guid: 26dc959966eebe54ebccdfc17461e73f, type: 3}
+  gridCellWhite: {fileID: 3086824782715340822, guid: 7e383df241caa964e96db3872082d45f, type: 3}
+  gridCellBlack: {fileID: 3221842642433451192, guid: d72e2b46a1674d849bc101f811267923, type: 3}
