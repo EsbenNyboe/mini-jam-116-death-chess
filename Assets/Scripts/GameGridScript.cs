@@ -7,6 +7,8 @@ using Random = UnityEngine.Random;
 
 public class GameGridScript : MonoBehaviour
 {
+    public static GameGridScript Instance;
+    
     public int height = 10;
     public int width = 10;
     public float gridSpaceSize = 1f;
@@ -19,6 +21,20 @@ public class GameGridScript : MonoBehaviour
     private GameObject[,] gameGrid;
     private bool isBlack = false;
 
+    private void Awake()
+    {
+        if (Instance)
+        {
+            if (Instance != this)
+            {
+                Destroy(gameObject);
+            }
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -30,16 +46,16 @@ public class GameGridScript : MonoBehaviour
     private int selectedWidth;
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Return))
-        {
-            selectedWidth++;
-            if (selectedWidth > width)
-            {
-                selectedHeight++;
-                selectedWidth = 0;
-            }
-            Selection.activeGameObject = gameGrid[selectedHeight, selectedWidth];
-        }
+        // if (Input.GetKey(KeyCode.Return))
+        // {
+        //     selectedWidth++;
+        //     if (selectedWidth > width)
+        //     {
+        //         selectedHeight++;
+        //         selectedWidth = 0;
+        //     }
+        //     Selection.activeGameObject = gameGrid[selectedHeight, selectedWidth];
+        // }
     }
 
     // Creates the gridd when the game starts
@@ -68,7 +84,8 @@ public class GameGridScript : MonoBehaviour
 
                 gridSpaceSize = Random.Range(randRangeMin, randRangeMax);
 
-                gameGrid[x, z] = Instantiate(gridCellPrefab, new Vector3(x * gridSpaceSize, 0, z * gridSpaceSize), Quaternion.identity);
+                float yPosition = -gridSpaceSize * 0.5f;
+                gameGrid[x, z] = Instantiate(gridCellPrefab, new Vector3(x * gridSpaceSize, yPosition, z * gridSpaceSize), Quaternion.identity);
                 gameGrid[x, z].GetComponent<GridCellScript>().SetPosition(x, z);
                 gameGrid[x ,z].transform.parent = transform;
                 gameGrid[x, z].gameObject.name = "Grid Space ( X: " + x.ToString() + " , Y: " + z.ToString() + ")";
