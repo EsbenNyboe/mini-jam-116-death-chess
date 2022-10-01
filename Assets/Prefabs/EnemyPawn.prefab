@@ -50,7 +50,7 @@ MonoBehaviour:
   moveWaitTime: 1
   enemyRigidbody: {fileID: 6957786555308675521}
   despawnTimer: 2
-  jumpPower: 0.1
+  jumpPower: 0.06
   jumpGravity: 0.0055
   initialMoveWaitTimeFactor: 0
   gridMovePattern: {x: 2, y: 0}
