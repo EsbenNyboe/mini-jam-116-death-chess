@@ -27,9 +27,4 @@ public class GridCellScript : MonoBehaviour
     {
         return new Vector2Int(posX, posY);
     }
-
-    public void Testing()
-    {
-        Debug.Log("ok");
-    }
 }

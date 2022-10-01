@@ -103,13 +103,12 @@ public class GameGridScript : MonoBehaviour
 
     // Gets the grids position form the world position
     public Vector2Int GetGridPosFromWorld(Vector3 worldPosition)
-
     {
         int x = Mathf.FloorToInt(worldPosition.x / gridSpaceSize);
         int y = Mathf.FloorToInt(worldPosition.z / gridSpaceSize);
 
-        x = Mathf.Clamp(x, 0, width);
-        y = Mathf.Clamp(x, 0, height);
+        x = Mathf.Clamp(x, 0, height);
+        y = Mathf.Clamp(y, 0, width);
 
         return new Vector2Int(x, y);
     }

@@ -22,10 +22,9 @@ public class TestPlayerControls : MonoBehaviour
 
     private void PlayerMelee()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.C))
         {
             Vector3 meleePos = new Vector3(0f, 0f, 1f);
-
             GameObject melee = Instantiate(meleeSpawn,
             playerTransform.position + meleePos,
             meleeSpawn.transform.rotation,
