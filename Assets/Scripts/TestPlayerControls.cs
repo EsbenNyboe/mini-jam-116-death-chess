@@ -46,7 +46,45 @@ public class TestPlayerControls : MonoBehaviour
     }
 
     void PlayerFlatMovement()
-    {        
+    {
+        PlayerHorizontalMovement();
+        PlayerVerticalMovement();
+        Vector3 velocity = new Vector3(_moveHorizontal, 0f, _moveVertical);
+        transform.localPosition += velocity * Time.deltaTime;
+    }
+
+    private void PlayerVerticalMovement()
+    {
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            _moveVertical = 0f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            _moveVertical = 0f;
+        }
+
+        if (Input.GetKey(KeyCode.W))
+        {
+            _moveVertical += acceleration;
+        }
+
+
+        else if (Input.GetKey(KeyCode.S))
+        {
+            _moveVertical -= acceleration;
+        }
+
+        else
+        {
+            VerticalDecel();
+
+        }
+    }
+
+    private void PlayerHorizontalMovement()
+    {
         if (Input.GetKeyDown(KeyCode.A))
         {
             _moveHorizontal = 0f;
@@ -71,37 +109,6 @@ public class TestPlayerControls : MonoBehaviour
         {
             HorizontalDecel();
         }
-
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            _moveVertical = 0f;
-        }
-
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            _moveVertical = 0f;
-        }
-
-        if (Input.GetKey(KeyCode.W))
-        {
-            _moveVertical += acceleration;
-        }
-
-        
-        else if (Input.GetKey(KeyCode.S))
-        {
-            _moveVertical -= acceleration;
-        }
-
-        else
-        {
-            VerticalDecel();
-
-        }
-
-        Vector3 velocity = new Vector3(_moveHorizontal, 0f, _moveVertical);
-        transform.localPosition += velocity * Time.deltaTime;
-
     }
 
     private void VerticalDecel()

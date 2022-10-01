@@ -111,5 +111,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   melee: {fileID: 8786814547388624099}
-  meleeSpeed: 2
-  timeToDestroy: 1
+  playerTransform: {fileID: 0}
+  timeToDestroy: 0.1
