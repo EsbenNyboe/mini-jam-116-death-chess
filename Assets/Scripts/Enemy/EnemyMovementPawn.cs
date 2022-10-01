@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemyMovementPawn : MonoBehaviour
 {
     [SerializeField] private int xAmount;
+
     // [SerializeField] private int zAmount;
     [SerializeField] private float moveSpeed;
     // private bool _alternateDirection;
@@ -15,6 +16,7 @@ public class EnemyMovementPawn : MonoBehaviour
 
     private bool _isMoving;
     private Vector3 _startMovingPosition;
+    private Vector2Int _startMovingGridCell;
 
     [SerializeField] private Rigidbody enemyRigidbody;
 
@@ -25,12 +27,19 @@ public class EnemyMovementPawn : MonoBehaviour
     [SerializeField] private float jumpGravity;
     private float _jumpSpeed;
 
+    [Range(0, 1)] [SerializeField] private float initialMoveWaitTimeFactor;
+
+    private Vector2Int _currentTargetGridCell;
+    private Vector3 _currentTargetPosition;
+
+    [SerializeField] private Vector2Int gridMovePattern;
+
     private void Start()
     {
         EnablePhysics(false);
-        _timer = moveWaitTime * 0.99f;
+        _timer = moveWaitTime * initialMoveWaitTimeFactor;
     }
-    
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Return))
@@ -43,7 +52,7 @@ public class EnemyMovementPawn : MonoBehaviour
             MoveBehaviour();
         }
     }
-    
+
     private void MoveBehaviour()
     {
         if (_isMoving)
@@ -57,6 +66,14 @@ public class EnemyMovementPawn : MonoBehaviour
             {
                 _timer = 0;
                 _startMovingPosition = transform.position;
+                _startMovingGridCell = GameGridScript.Instance.GetGridPosFromWorld(_startMovingPosition);
+                _currentTargetGridCell = _startMovingGridCell + gridMovePattern;
+                _currentTargetPosition = GameGridScript.Instance.GetWorldPosFromGridPos(_currentTargetGridCell);
+
+                // GridCellScript gridCellScript = GameGridScript.Instance.GetGridCellScriptFromGridPos(_currentTargetGridCell);
+                // gridCellScript.objectInThisGridSpace = gameObject;
+                // gridCellScript.isOccupied = true;
+
                 _isMoving = true;
                 _jumpSpeed = jumpPower;
             }
@@ -65,19 +82,21 @@ public class EnemyMovementPawn : MonoBehaviour
 
     private void Move()
     {
-        if (transform.rotation.x < -0.001f || transform.rotation.x > 0.001f )
+        if (transform.rotation.x < -0.001f || transform.rotation.x > 0.001f)
         {
             return;
         }
-        if (transform.position.x < _startMovingPosition.x + xAmount)
+
+        if (transform.position.x < _currentTargetPosition.x)
         {
             // transform.Translate(new Vector3(moveSpeed, 0, 0));
             _jumpSpeed -= jumpGravity;
             Vector3 newPosition = transform.position + new Vector3(moveSpeed, _jumpSpeed, 0);
-            if (newPosition.y <_startMovingPosition.y)
+            if (newPosition.y < _startMovingPosition.y)
             {
                 newPosition.y = _startMovingPosition.y;
             }
+
             transform.position = newPosition;
         }
         else
@@ -91,7 +110,7 @@ public class EnemyMovementPawn : MonoBehaviour
         EnablePhysics(true);
         Destroy(gameObject, despawnTimer);
     }
-    
+
     private void EnablePhysics(bool enable)
     {
         enemyRigidbody.detectCollisions = enable;
