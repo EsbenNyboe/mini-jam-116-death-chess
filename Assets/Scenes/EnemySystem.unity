@@ -530,7 +530,7 @@ MonoBehaviour:
   enemyRigidbody: {fileID: 1574923695}
   despawnTimer: 2
   jumpPower: 0.1
-  jumpGravity: 0.01
+  jumpGravity: 0.0055
 --- !u!65 &1574923691
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -756,6 +756,7 @@ MonoBehaviour:
   - {fileID: 1992059573}
   - {fileID: 1599570004}
   - {fileID: 2106300836}
+  serialLogic: 2
 --- !u!4 &2071293768
 Transform:
   m_ObjectHideFlags: 0
