@@ -72,15 +72,13 @@ public class EnemyMovementPawn : MonoBehaviour
         if (transform.position.x < _startMovingPosition.x + xAmount)
         {
             // transform.Translate(new Vector3(moveSpeed, 0, 0));
-            if (transform.position.y < _startMovingPosition.y)
+            _jumpSpeed -= jumpGravity;
+            Vector3 newPosition = transform.position + new Vector3(moveSpeed, _jumpSpeed, 0);
+            if (newPosition.y <_startMovingPosition.y)
             {
-                _jumpSpeed = 0;
+                newPosition.y = _startMovingPosition.y;
             }
-            else
-            {
-                _jumpSpeed -= jumpGravity;
-            }
-            transform.position += new Vector3(moveSpeed, _jumpSpeed, 0);
+            transform.position = newPosition;
         }
         else
         {
