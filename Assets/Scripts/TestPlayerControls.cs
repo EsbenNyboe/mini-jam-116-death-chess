@@ -5,10 +5,8 @@ using UnityEngine;
 public class TestPlayerControls : MonoBehaviour
 {    
     
-    float _moveSpeedA = 0f;
-    float _moveSpeedD = 0f;
-    float _moveSpeedW = 0f;
-    float _moveSpeedS = 0f;
+    float _moveHorizontal = 0f;
+    float _moveVertical = 0f;
 
     [SerializeField] GameObject projectileSpawn;
     [SerializeField] Transform playerTransform;
@@ -35,80 +33,75 @@ public class TestPlayerControls : MonoBehaviour
     }
 
     void PlayerFlatMovement()
-    {
-        // move left
-        
+    {        
         if (Input.GetKeyDown(KeyCode.A))
         {
-            _moveSpeedA = 0f;
+            _moveHorizontal = 0f;
         }
 
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.D))
         {
-            Vector3 velocityLeftX = new Vector3(-_moveSpeedA, 0f, 0f);
-            transform.localPosition += velocityLeftX * Time.deltaTime;
-
-            _moveSpeedA += acceleration;
+            _moveHorizontal = 0f;
         }
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            _moveHorizontal += acceleration;
+        }
+
+        else if (Input.GetKey(KeyCode.A))
+        {
+            _moveHorizontal -= acceleration;
+        }
+
+        else 
+        {
+            _moveHorizontal = 0f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            _moveVertical = 0f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            _moveVertical = 0f;
+        }
+
+        if (Input.GetKey(KeyCode.W))
+        {
+            _moveVertical += acceleration;
+        }
+
+        
+        else if (Input.GetKey(KeyCode.S))
+        {
+            _moveVertical -= acceleration;
+        }
+
+        else
+        {
+            _moveVertical = 0f;
+        }
+
+        Vector3 velocity = new Vector3(_moveHorizontal, 0f, _moveVertical);
+        transform.localPosition += velocity * Time.deltaTime;
+
 
         // FUCKING DECELARATION?!?!
         // if (Input.GetKeyUp(KeyCode.A))
         // {
 
-            // float playerSpeed = (transform.position - this.transform.position).magnitude / Time.time;
-            // transform.localPosition = playerSpeed - acceleration;
+        // float playerSpeed = (transform.position - this.transform.position).magnitude / Time.time;
+        // transform.localPosition = playerSpeed - acceleration;
 
-            // Vector3 distanceTraveled = new Vector3((this.transform.position).magnitude, 0f, 0f);
-            // float speed = distanceTraveled / (Time.time - Time.timeSinceLevelLoad);
-            
-            // speed = total distance traveled / total time taken
-            // total distance traveled = start position - current position
+        // Vector3 distanceTraveled = new Vector3((this.transform.position).magnitude, 0f, 0f);
+        // float speed = distanceTraveled / (Time.time - Time.timeSinceLevelLoad);
+
+        // speed = total distance traveled / total time taken
+        // total distance traveled = start position - current position
 
         // }
-
-        //move right
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            _moveSpeedD = 0f;
-        }
-
-        if (Input.GetKey(KeyCode.D))
-        {
-            Vector3 velocityRightX = new Vector3(_moveSpeedD, 0f, 0f);
-            transform.localPosition += velocityRightX * Time.deltaTime;
-
-            _moveSpeedD += acceleration;
-        }
-
-        // move forward
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            _moveSpeedW = 0f;
-        }
-
-        if (Input.GetKey(KeyCode.W))
-        {
-            Vector3 velocityForwardZ = new Vector3(0f, 0f, _moveSpeedW);
-            transform.localPosition += velocityForwardZ * Time.deltaTime;
-
-            _moveSpeedW += acceleration;
-        }
-
-        // move backward
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            _moveSpeedS = 0f;
-        }
-
-        if (Input.GetKey(KeyCode.S))
-        {
-            Vector3 velocityBackZ = new Vector3(0f, 0f, -_moveSpeedS);
-            transform.localPosition += velocityBackZ * Time.deltaTime;
-
-            _moveSpeedS += acceleration;
-        }
-
-        
-         
     }
 }
