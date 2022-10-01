@@ -14,8 +14,17 @@ public class MeleeMovement : MonoBehaviour
         Destroy(melee, timeToDestroy);
     }
 
-    void Update()
-    {
-        // transform.localPosition += playerTransform * Time.deltaTime;
-    }
+    void OnCollisionEnter(Collision other) 
+        {
+            switch (other.gameObject.tag)
+            {
+                case "Enemy":
+                Debug.Log("Enemy HIT!");
+                break;
+
+                default:
+                Debug.Log("Not HIT!");
+                break;
+            }    
+        }
 }

@@ -16,13 +16,30 @@ public class ProjectileMovement : MonoBehaviour
         Destroy(projectile, timeToDestroy);
     }
 
-    // projectile path when instatiated
+    
     void Update()
     {
+        ProjectileTrajectory();
 
-        // Debug.Log("instatiated maybe?");
+    }
+
+    void OnCollisionEnter(Collision other) 
+        {
+            switch (other.gameObject.tag)
+            {
+                case "Enemy":
+                Debug.Log("Enemy HIT!");
+                break;
+
+                default:
+                Debug.Log("Not HIT!");
+                break;
+            }    
+        }
+
+    private void ProjectileTrajectory()
+    {
         Vector3 projectilePath = new Vector3(0f, projectileHeight, projectileSpeed);
         transform.localPosition += projectilePath * Time.deltaTime;
-
     }
 }
