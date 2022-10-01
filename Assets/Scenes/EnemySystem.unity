@@ -186,6 +186,14 @@ PrefabInstance:
       propertyPath: height
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 7514941902134864521, guid: b4a91356dc9fc3e49b528d56c7cb66cd, type: 3}
+      propertyPath: gridCellBlack
+      value: 
+      objectReference: {fileID: 3221842642433451192, guid: d72e2b46a1674d849bc101f811267923, type: 3}
+    - target: {fileID: 7514941902134864521, guid: b4a91356dc9fc3e49b528d56c7cb66cd, type: 3}
+      propertyPath: gridCellWhite
+      value: 
+      objectReference: {fileID: 3086824782715340822, guid: 7e383df241caa964e96db3872082d45f, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4a91356dc9fc3e49b528d56c7cb66cd, type: 3}
 --- !u!1 &290625295
@@ -689,7 +697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdc6d144bf9cb6c4a9663e0542d7c786, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyTemplate: {fileID: 4371438423856176619, guid: 751178c023c703546946927a4d622ddb, type: 3}
+  enemyTemplate: {fileID: 6345245332066903068, guid: aec8782d118a98147adeededcdc9ff75, type: 3}
   spawnPoints:
   - {fileID: 1099814205}
   - {fileID: 290625296}
@@ -699,7 +707,9 @@ MonoBehaviour:
   - {fileID: 1599570004}
   - {fileID: 2106300836}
   serialLogic: 2
+  useSingleLine: 0
   gameGridScript: {fileID: 1160051965}
+  spawnWaitTime: 0.01
 --- !u!4 &2071293768
 Transform:
   m_ObjectHideFlags: 0

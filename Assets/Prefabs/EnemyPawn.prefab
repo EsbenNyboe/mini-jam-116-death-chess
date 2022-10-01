@@ -54,6 +54,7 @@ MonoBehaviour:
   jumpGravity: 0.0055
   initialMoveWaitTimeFactor: 0
   gridMovePattern: {x: 2, y: 0}
+  timeToClearOccupation: 0.1
 --- !u!1 &4694919004132975922
 GameObject:
   m_ObjectHideFlags: 0
