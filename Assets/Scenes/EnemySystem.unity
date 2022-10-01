@@ -812,7 +812,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdc6d144bf9cb6c4a9663e0542d7c786, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyTemplate: {fileID: 1574923689}
+  enemyTemplate: {fileID: 4371438423856176619, guid: 751178c023c703546946927a4d622ddb, type: 3}
   spawnPoints:
   - {fileID: 1099814205}
   - {fileID: 290625296}
