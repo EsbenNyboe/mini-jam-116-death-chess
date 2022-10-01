@@ -7,7 +7,6 @@ using Random = UnityEngine.Random;
 
 public class GameGridScript : MonoBehaviour
 {
-
     public int height = 10;
     public int width = 10;
     public float gridSpaceSize = 1f;
