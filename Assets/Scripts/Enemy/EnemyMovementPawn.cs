@@ -69,7 +69,11 @@ public class EnemyMovementPawn : MonoBehaviour
                 _startMovingGridCell = GameGridScript.Instance.GetGridPosFromWorld(_startMovingPosition);
                 _currentTargetGridCell = _startMovingGridCell + gridMovePattern;
                 _currentTargetPosition = GameGridScript.Instance.GetWorldPosFromGridPos(_currentTargetGridCell);
-                
+
+                // GridCellScript gridCellScript = GameGridScript.Instance.GetGridCellScriptFromGridPos(_currentTargetGridCell);
+                // gridCellScript.objectInThisGridSpace = gameObject;
+                // gridCellScript.isOccupied = true;
+
                 _isMoving = true;
                 _jumpSpeed = jumpPower;
             }
