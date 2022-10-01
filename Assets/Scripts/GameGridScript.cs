@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class GameGridScript : MonoBehaviour
 {
@@ -22,6 +25,22 @@ public class GameGridScript : MonoBehaviour
     void Start()
     {
         CreateGrid();
+    }
+
+    private int selectedHeight;
+    private int selectedWidth;
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Return))
+        {
+            selectedWidth++;
+            if (selectedWidth > width)
+            {
+                selectedHeight++;
+                selectedWidth = 0;
+            }
+            Selection.activeGameObject = gameGrid[selectedHeight, selectedWidth];
+        }
     }
 
     // Creates the gridd when the game starts
