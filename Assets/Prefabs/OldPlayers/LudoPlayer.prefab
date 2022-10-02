@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1780824456}
   - component: {fileID: 1780824455}
   - component: {fileID: 1780824454}
+  - component: {fileID: -6557684144878156317}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -84,6 +85,19 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1780824453}
   m_Enabled: 1
+--- !u!114 &-6557684144878156317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780824453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
 --- !u!1 &1276078169988088631
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,6 +261,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpawn: {fileID: 1717119057167668227, guid: d864a9683ffcd1f41adc5682e96e12b5, type: 3}
   meleeSpawn: {fileID: 8786814547388624099, guid: 626e60f1989f2ba47b6c34efdb1817f0, type: 3}
-  playerTransform: {fileID: 7999418970700206092}
+  attackTransform: {fileID: 0}
   acceleration: 0.1
   decelaration: 0.1
