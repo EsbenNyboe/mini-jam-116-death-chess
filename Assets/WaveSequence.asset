@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: WaveSequence
   m_EditorClassIdentifier: 
   Waves:
-  - enemy: {fileID: 1542095816487866970, guid: 9beff3465707ef9488114bc689f89343, type: 3}
-    count: 10
+  - enemy: {fileID: 1542095816487866970, guid: 7636d31abf55d204e96be5d26fd9c091, type: 3}
+    count: 11
     spawnWaitTime: 0.2
     serialLogic: 2
   - enemy: {fileID: 0}
@@ -30,15 +30,23 @@ MonoBehaviour:
     spawnWaitTime: 4
     serialLogic: 0
   - enemy: {fileID: 4568105318851863581, guid: 4b3475745bac07c49b7bdc7510ae7a7f, type: 3}
-    count: 10
+    count: 11
     spawnWaitTime: 0.1
     serialLogic: 0
   - enemy: {fileID: 0}
     count: 1
     spawnWaitTime: 4
     serialLogic: 0
+  - enemy: {fileID: 1542095816487866970, guid: 9beff3465707ef9488114bc689f89343, type: 3}
+    count: 44
+    spawnWaitTime: 0.2
+    serialLogic: 2
+  - enemy: {fileID: 0}
+    count: 1
+    spawnWaitTime: 4
+    serialLogic: 0
   - enemy: {fileID: 8651513445187116777, guid: 33f5791f4f8b5184b989247714912765, type: 3}
-    count: 10
+    count: 11
     spawnWaitTime: 0.5
     serialLogic: 0
   - enemy: {fileID: 0}

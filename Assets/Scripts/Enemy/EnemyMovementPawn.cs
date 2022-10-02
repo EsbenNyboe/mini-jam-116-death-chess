@@ -92,6 +92,7 @@ public class EnemyMovementPawn : MonoBehaviour
                     if (currentGridCell.x >= GameGridScript.Instance.width - 1)
                     {
                         GetKilled();
+                        UIManager.Instance.TakeDamage(1);
                         return;
                     }
 

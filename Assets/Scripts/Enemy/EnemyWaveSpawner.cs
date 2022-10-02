@@ -8,7 +8,7 @@ using Random = UnityEngine.Random;
 public class EnemyWaveSpawner : MonoBehaviour
 {
     [SerializeField] private WaveSequence[] waveSequences;
-    private int _spawnIndex;
+    private int _spawnIndex = -1;
 
     private GameGridScript _gameGridScript;
 
