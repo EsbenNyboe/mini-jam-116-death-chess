@@ -67,8 +67,9 @@ MonoBehaviour:
   projectileSpeed: 4
   projectileHeight: 2
   timeToDestroy: 2
+  rb: {fileID: 0}
   boxCollider: {fileID: 6149572247570554871}
-  impactRadius: 20
+  impactRadius: 15
 --- !u!65 &6149572247570554871
 BoxCollider:
   m_ObjectHideFlags: 0

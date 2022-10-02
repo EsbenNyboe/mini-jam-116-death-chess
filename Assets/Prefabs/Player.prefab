@@ -277,7 +277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e71442925e7b47a438a8b0ebad4d5dea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileSpawn: {fileID: 1717119057167668227, guid: d864a9683ffcd1f41adc5682e96e12b5, type: 3}
+  projectileSpawn: {fileID: 1717119057167668227, guid: 89fe53625f606d3429aab27b62f8ea5f, type: 3}
   meleeSpawn: {fileID: 8786814547388624099, guid: 626e60f1989f2ba47b6c34efdb1817f0, type: 3}
   attackTransform: {fileID: 2124455236}
   acceleration: 0.05

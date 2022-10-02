@@ -39,7 +39,7 @@ public class TestPlayerControls : MonoBehaviour
         {
             GameObject projectile = Instantiate(projectileSpawn,
             attackTransform.position,
-            attackTransform.rotation);
+            Random.rotation);
             projectile.SetActive(true);
         }
     }
