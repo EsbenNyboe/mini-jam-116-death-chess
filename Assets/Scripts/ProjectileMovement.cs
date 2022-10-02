@@ -44,6 +44,8 @@ public class ProjectileMovement : MonoBehaviour
                 // PLAY SOUND: KILL
                 other.rigidbody.detectCollisions = false;
                 other.gameObject.GetComponentInParent<EnemyMovementPawn>().GetKilled();
+                
+                UIManager.Instance.AddToScore(1);
                 break;
         }
     }

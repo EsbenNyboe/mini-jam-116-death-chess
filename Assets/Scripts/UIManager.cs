@@ -1,70 +1,53 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] Text _scoreText;
-    [SerializeField] Text _timeText;
+    public static UIManager Instance;
+    
+    [FormerlySerializedAs("_scoreText")] [SerializeField] Text scoreText;
+    [FormerlySerializedAs("_timeText")] [SerializeField] Text timeText;
 
-    float pawnPts = 0f;
-    float runnerPts = 0f;
-    float towerPts = 0f;
-    float knightPts = 0f;
-    float queenPts = 0f;
-    float kingPts = 0f;
+    private float _score;
+
+    private void Awake()
+    {
+        if (Instance)
+        {
+            if (Instance != this)
+            {
+                Destroy(gameObject);
+            }
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
 
     void Start()
     {
-        _scoreText.text = "Score: " + 0 + " pts";
-        _timeText.text = "Time: " + 0 + " sec";
+        scoreText.text = "Score: " + 0 + " pts";
+        timeText.text = "Time: " + 0 + " sec";
     }
 
     void Update()
     {
         float timeCalc = Time.fixedTime;
 
-        float scoreCalc =
-            (pawnPts +
-             runnerPts +
-             towerPts +
-             knightPts +
-             queenPts +
-             kingPts) /
-            timeCalc;
+        // float scoreCalc = _score / timeCalc;
+        float scoreCalc = _score;
 
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            pawnPts += 1f;
-        }
+        scoreText.text = "Score: " + (int)scoreCalc + " pts";
+        timeText.text = "Time: " + (int)timeCalc + " sec";
+    }
 
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            runnerPts += 5f;
-        }
-
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            towerPts += 10f;
-        }
-
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            knightPts += 20f;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            queenPts += 50f;
-        }
-
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            kingPts += 100f;
-        }
-
-        _scoreText.text = "Score: " + (int)scoreCalc + " pts";
-        _timeText.text = "Time: " + (int)timeCalc + " sec";
+    public void AddToScore(int points)
+    {
+        _score += points;
     }
 }
