@@ -43,10 +43,10 @@ public class EnemyMovementPawn : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            GetKilled();
-        }
+        // if (Input.GetKeyDown(KeyCode.Return))
+        // {
+        //     GetKilled();
+        // }
 
         if (_isRagDoll == false)
         {
@@ -138,6 +138,12 @@ public class EnemyMovementPawn : MonoBehaviour
         }
     }
 
+
+    public void GetHurt()
+    {
+        
+    }
+    
     public void GetKilled()
     {
         EnablePhysics(true);
