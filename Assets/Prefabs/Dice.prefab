@@ -63,11 +63,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76da379225763354899eca3bebc7795e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 1717119057167668227}
   projectileSpeed: 4
   projectileHeight: 2
   timeToDestroy: 2
-  rb: {fileID: 0}
+  rb: {fileID: 1951474254159898960}
   boxCollider: {fileID: 6149572247570554871}
   impactRadius: 15
 --- !u!65 &6149572247570554871
