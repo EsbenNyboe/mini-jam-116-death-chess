@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class EnemyMovementPawn : MonoBehaviour
 {
+    [SerializeField] private Animator animator;
+
     [SerializeField] private float moveSpeed;
 
     private float _timer;
@@ -39,6 +41,8 @@ public class EnemyMovementPawn : MonoBehaviour
         _currentTargetGridCell = GameGridScript.Instance.GetGridPosFromWorld(transform.position);
         _previousTargetGridCell = _currentTargetGridCell;
         SetOccupation(true, _currentTargetGridCell);
+
+        animator.SetBool("isAlive", true);
     }
 
     void Update()
@@ -141,11 +145,14 @@ public class EnemyMovementPawn : MonoBehaviour
 
     public void GetHurt()
     {
-        
+        animator.SetTrigger("getHurt");
+
     }
     
     public void GetKilled()
     {
+        animator.SetBool("isAlive", false);
+
         EnablePhysics(true);
         Destroy(gameObject, timeToClearOccupation + despawnTimer);
         StartCoroutine(ClearPreviousOccupation(_previousTargetGridCell));
