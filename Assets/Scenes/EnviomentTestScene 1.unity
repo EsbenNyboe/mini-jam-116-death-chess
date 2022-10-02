@@ -483,6 +483,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4703bc7aeaf83b4aad33d28bf3724a7, type: 3}
+--- !u!114 &1579119919 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5225066868983086188, guid: aaf324d6184e45941ae07c49e0f7b7ee, type: 3}
+  m_PrefabInstance: {fileID: 1685863552}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1660373464
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -643,7 +654,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5225066868368875570, guid: aaf324d6184e45941ae07c49e0f7b7ee, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: aaf324d6184e45941ae07c49e0f7b7ee, type: 3}
 --- !u!1001 &1706128808
 PrefabInstance:
@@ -796,6 +808,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 133.739, y: 152.325, z: 101.289}
+--- !u!114 &1898262806 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5225066868046141007, guid: aaf324d6184e45941ae07c49e0f7b7ee, type: 3}
+  m_PrefabInstance: {fileID: 1685863552}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1937099112 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5225066868368875581, guid: aaf324d6184e45941ae07c49e0f7b7ee, type: 3}
+  m_PrefabInstance: {fileID: 1685863552}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1937099118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937099112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9a19c3ae90255449836ad37860c8499, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 1898262806}
+  healthText: {fileID: 1579119919}
+  lives: 20
 --- !u!1001 &1977231286
 PrefabInstance:
   m_ObjectHideFlags: 0
