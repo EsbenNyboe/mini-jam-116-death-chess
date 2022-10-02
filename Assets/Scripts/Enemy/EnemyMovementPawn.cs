@@ -34,6 +34,8 @@ public class EnemyMovementPawn : MonoBehaviour
     [SerializeField] private float timeToClearOccupation;
     private Vector2Int _previousTargetGridCell = new Vector2Int(-1, -1);
 
+    [SerializeField] private bool useDirectionToggle;
+
     private void Start()
     {
         if (animator) 
@@ -72,6 +74,11 @@ public class EnemyMovementPawn : MonoBehaviour
             {
                 _timer = 0;
 
+                if (useDirectionToggle)
+                {
+                    gridMovePattern.y = -gridMovePattern.y;
+                }
+                
                 Vector2Int currentGridCell = GameGridScript.Instance.GetGridPosFromWorld(transform.position);
                 int xTarget = currentGridCell.x + gridMovePattern.x;
                 int yTarget = currentGridCell.y + gridMovePattern.y;
