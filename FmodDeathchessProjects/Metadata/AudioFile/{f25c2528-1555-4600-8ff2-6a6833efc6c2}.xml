@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{f25c2528-1555-4600-8ff2-6a6833efc6c2}">
 		<property name="assetPath">
-			<value>Edestroy01 [2022-10-02 203256].wav</value>
+			<value>SFX/Edestroy01 [2022-10-02 203256].wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
