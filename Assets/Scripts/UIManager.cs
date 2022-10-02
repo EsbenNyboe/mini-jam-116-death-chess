@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
@@ -10,15 +11,17 @@ public class UIManager : MonoBehaviour
     public static UIManager Instance;
     
     [FormerlySerializedAs("_scoreText")] [SerializeField] Text scoreText;
-    [FormerlySerializedAs("_timeText")] [SerializeField] Text timeText;
+    [FormerlySerializedAs("_timeText")] [SerializeField] Text healthText;
 
-    private float _score;
-    private float _startTime;
-    private float _timer;
-    [SerializeField] private float timerFactor;
+    private int _score;
     [SerializeField] private int lives = 10;
+    private int _currentLives;
 
     private bool _gameOver;
+
+    private TestPlayerControls _player;
+
+    private float _gameOverSinkSpeed;
 
     private void Awake()
     {
@@ -37,22 +40,31 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        scoreText.text = "Score: " + 0 + " pts";
-        timeText.text = "Time: " + 0 + " sec";
-        _timer = 0;
+        _currentLives = lives;
+        _player = FindObjectOfType<TestPlayerControls>();
     }
 
     void Update()
     {
-        _timer += Time.deltaTime;
-        float timeCalc = _timer * timerFactor;
+        scoreText.text = "Score: " + _score;
+        healthText.text = "Lives: " + _currentLives;
 
-        float scoreCalc = _score / timeCalc;
-        // float scoreCalc = _score;
-
-        scoreText.text = "Score: " + (int)scoreCalc;// + " pts";
-        // timeText.text = "Time: " + (int)_timer;// + " sec";
-        timeText.text = "Lives: " + lives;// + " sec";
+        if (_gameOver)
+        {
+            _gameOverSinkSpeed -= 0.00001f;
+            if (_gameOverSinkSpeed < 0)
+            {
+                _gameOverSinkSpeed = 0;
+            }
+            _player.gameObject.transform.localPosition -= new Vector3(0, _gameOverSinkSpeed, 0);
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                _score = 0;
+                _currentLives = lives;
+                _gameOver = false;
+                SceneManager.LoadScene(0);
+            }
+        }
     }
 
     public void AddToScore(int points)
@@ -62,11 +74,17 @@ public class UIManager : MonoBehaviour
 
     public void TakeDamage(int points)
     {
-        lives -= points;
-        if (lives < 1)
+        if (_currentLives == 1)
         {
             // PLAY SOUND: GAME OVER
             _gameOver = true;
+            _gameOverSinkSpeed = 0.005f;
+            _player.enabled = false;
+        }
+        _currentLives -= points;
+        if (_currentLives < 0)
+        {
+            _currentLives = 0;
         }
     }
 }

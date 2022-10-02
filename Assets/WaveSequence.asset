@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WaveSequence
   m_EditorClassIdentifier: 
   Waves:
-  - enemy: {fileID: 1542095816487866970, guid: 9beff3465707ef9488114bc689f89343, type: 3}
+  - enemy: {fileID: 1542095816487866970, guid: 7636d31abf55d204e96be5d26fd9c091, type: 3}
     count: 11
     spawnWaitTime: 0.2
     serialLogic: 2

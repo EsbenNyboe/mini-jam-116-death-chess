@@ -196,9 +196,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 5225066868046141007}
-  timeText: {fileID: 5225066868983086188}
-  timerFactor: 0.1
+  healthText: {fileID: 5225066868983086188}
   lives: 10
+  player: {fileID: 0}
 --- !u!1 &5225066868983086190
 GameObject:
   m_ObjectHideFlags: 0
