@@ -9,10 +9,13 @@ public class ProjectileMovement : MonoBehaviour
 [SerializeField] float projectileSpeed = 20f;
 [SerializeField] float projectileHeight = 1f;
 [SerializeField] float timeToDestroy = 3f;
-
+[SerializeField] Rigidbody rb;
 
     void Start() 
     {
+        Vector3 randomVector = new Vector3(50f, 50f, 50f);
+        rb.AddTorque(randomVector);
+
         Destroy(projectile, timeToDestroy);
     }
 

@@ -81,6 +81,7 @@ MonoBehaviour:
   projectileSpeed: 4
   projectileHeight: 2
   timeToDestroy: 2
+  rb: {fileID: 1951474254159898960}
 --- !u!1 &7663337999776296154
 GameObject:
   m_ObjectHideFlags: 0
