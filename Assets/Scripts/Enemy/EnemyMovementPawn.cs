@@ -36,7 +36,8 @@ public class EnemyMovementPawn : MonoBehaviour
 
     private void Start()
     {
-        animator.SetBool("isAlive", true);
+        if (animator) 
+            animator.SetBool("isAlive", true);
 
         EnablePhysics(false);
         _timer = moveWaitTime * initialMoveWaitTimeFactor;
@@ -132,35 +133,33 @@ public class EnemyMovementPawn : MonoBehaviour
 
     private void Move()
     {
-        _moveProgress += moveSpeed;
-        if (_moveProgress > 1)
-        {
-            
-        }
-        Vector3 interpolatedPosition = Vector3.Lerp(_startMovingPosition, _currentTargetPosition, moveSpeed);
-        
         if (transform.rotation.x < -0.001f || transform.rotation.x > 0.001f)
         {
             return;
         }
-
-        if (transform.position.x < _currentTargetPosition.x)
+        
+        _jumpSpeed -= jumpGravity;
+        float newPositionY = transform.position.y + _jumpSpeed;
+        if (newPositionY < _startMovingPosition.y)
         {
-            // transform.Translate(new Vector3(moveSpeed, 0, 0));
-            _jumpSpeed -= jumpGravity;
-            Vector3 newPosition = transform.position +
-                                  new Vector3(moveSpeed * gridMovePattern.x, _jumpSpeed, moveSpeed * gridMovePattern.y);
-            if (newPosition.y < _startMovingPosition.y)
-            {
-                newPosition.y = _startMovingPosition.y;
-            }
-
-            transform.position = newPosition;
+            newPositionY = _startMovingPosition.y;
         }
-        else
+        
+        _moveProgress += moveSpeed;
+
+        Vector3 interpolatedPosition = Vector3.Lerp(_startMovingPosition, _currentTargetPosition, _moveProgress);
+        
+        if (_moveProgress > 1)
         {
+            _moveProgress = 0;
             _isMoving = false;
+            interpolatedPosition.x = _currentTargetPosition.x;
+            interpolatedPosition.z = _currentTargetPosition.z;
         }
+
+        interpolatedPosition.y = newPositionY;
+
+        transform.position = interpolatedPosition;
     }
     // private void Move()
     // {
@@ -196,7 +195,8 @@ public class EnemyMovementPawn : MonoBehaviour
 
     public void GetKilled()
     {
-        animator.SetBool("isAlive", false);
+        if (animator) 
+            animator.SetBool("isAlive", false);
         EnablePhysics(true);
         Destroy(gameObject, timeToClearOccupation + despawnTimer);
         StartCoroutine(ClearPreviousOccupation(_previousTargetGridCell));
