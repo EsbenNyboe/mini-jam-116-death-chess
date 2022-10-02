@@ -44,11 +44,10 @@ public class EnemyMovementPawn : MonoBehaviour
 
         EnablePhysics(false);
         _timer = moveWaitTime * initialMoveWaitTimeFactor;
-        _currentTargetGridCell = GameGridScript.Instance.GetGridPosFromWorld(transform.position);
+        var position = transform.position;
+        _currentTargetGridCell = GameGridScript.Instance.GetGridPosFromWorld(position);
         _previousTargetGridCell = _currentTargetGridCell;
         SetOccupation(true, _currentTargetGridCell);
-        
-        // PLAY SOUND: SPAWN
     }
 
     void Update()
@@ -93,6 +92,7 @@ public class EnemyMovementPawn : MonoBehaviour
                     {
                         GetKilled();
                         UIManager.Instance.TakeDamage(1);
+                        FMODUnity.RuntimeManager.PlayOneShot("event:/EnemySuicide", transform.position);
                         return;
                     }
 
@@ -159,7 +159,7 @@ public class EnemyMovementPawn : MonoBehaviour
             {
                 newPositionY = _startMovingPosition.y;
                 _isJumping = false;
-                // PLAY SOUND: LAND
+                FMODUnity.RuntimeManager.PlayOneShot("event:/EnemyLand", transform.position);
             }
         }
         

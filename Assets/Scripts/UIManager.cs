@@ -76,7 +76,8 @@ public class UIManager : MonoBehaviour
     {
         if (_currentLives == 1)
         {
-            // PLAY SOUND: GAME OVER
+            FMODUnity.RuntimeManager.PlayOneShot("event:/GameOver", transform.position);
+
             _gameOver = true;
             _gameOverSinkSpeed = 0.005f;
             _player.enabled = false;

@@ -24,18 +24,12 @@ public class PlayAudioScript : MonoBehaviour
     void PlaySpawnSound()
     {
         FMODUnity.RuntimeManager.PlayOneShot("event:/EnemySpawn", transform.position);
-        Debug.Log("Playing SPAWN sound");
-    }
-
-    void PlayHitSound()
-    {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/EnemyHit", transform.position);
-        Debug.Log("Playing HIT sound");
+        // Debug.Log("Playing SPAWN sound");
     }
 
     void PlayDestroySound()
     {
         FMODUnity.RuntimeManager.PlayOneShot("event:/EnemyDestroyed", transform.position);
-        Debug.Log("Playing DESTROY sound");
+        // Debug.Log("Playing DESTROY sound");
     }
 }

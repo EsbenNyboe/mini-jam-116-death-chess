@@ -20,7 +20,7 @@ public class ProjectileMovement : MonoBehaviour
 
         Destroy(gameObject, timeToDestroy);
         
-        // PLAY SOUND: SHOOT
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Shoot", transform.position);
     }
 
 
@@ -41,7 +41,7 @@ public class ProjectileMovement : MonoBehaviour
                 hasHit = true;
 
                 boxCollider.size = new Vector3(impactRadius, impactRadius, impactRadius);
-                // PLAY SOUND: KILL
+                FMODUnity.RuntimeManager.PlayOneShot("event:/EnemyHit", other.transform.position);
                 other.rigidbody.detectCollisions = false;
                 other.gameObject.GetComponentInParent<EnemyMovementPawn>().GetKilled();
                 
