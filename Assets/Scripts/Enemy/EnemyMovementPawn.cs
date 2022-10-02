@@ -47,6 +47,8 @@ public class EnemyMovementPawn : MonoBehaviour
         _currentTargetGridCell = GameGridScript.Instance.GetGridPosFromWorld(transform.position);
         _previousTargetGridCell = _currentTargetGridCell;
         SetOccupation(true, _currentTargetGridCell);
+        
+        // PLAY SOUND: SPAWN
     }
 
     void Update()
