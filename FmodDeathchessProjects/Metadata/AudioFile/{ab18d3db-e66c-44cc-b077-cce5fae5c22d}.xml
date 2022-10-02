@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{ab18d3db-e66c-44cc-b077-cce5fae5c22d}">
 		<property name="assetPath">
-			<value>Espawn04 [2022-10-02 203533].wav</value>
+			<value>SFX/Espawn04 [2022-10-02 203533].wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-4472624137367360860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/PauseMusic
+  m_EditorClassIdentifier: 
+  Path: event:/Music/PauseMusic
+  Guid:
+    Data1: -1993103806
+    Data2: 1249441470
+    Data3: -914268512
+    Data4: 181712634
+  Banks:
+  - {fileID: 1176748250486121812}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 10666
 --- !u!114 &-3989305707165239475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,10 +69,10 @@ MonoBehaviour:
   Path: FmodDeathchessProjects/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638003448709804813
+  lastModified: 638003495549798080
   FileSizes:
   - Name: Desktop
-    Value: 1016
+    Value: 1120
   Exists: 1
 --- !u!114 &-776203138809215864
 MonoBehaviour:
@@ -97,12 +124,14 @@ MonoBehaviour:
   - {fileID: 7294210998185329733}
   - {fileID: 7766888588964092106}
   - {fileID: -3989305707165239475}
+  - {fileID: 8801079018948888388}
+  - {fileID: -4472624137367360860}
   EditorParameters: []
   MasterBanks:
   - {fileID: 1176748250486121812}
   StringsBanks:
   - {fileID: -1086826102103411210}
-  cacheTime: 638003448709804813
+  cacheTime: 638003495549798080
   cacheVersion: 131592
 --- !u!114 &1176748250486121812
 MonoBehaviour:
@@ -119,10 +148,10 @@ MonoBehaviour:
   Path: FmodDeathchessProjects/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638003448709789763
+  lastModified: 638003495549778029
   FileSizes:
   - Name: Desktop
-    Value: 228544
+    Value: 2175328
   Exists: 1
 --- !u!114 &2151811921115973644
 MonoBehaviour:
@@ -259,3 +288,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1000
+--- !u!114 &8801079018948888388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/GameplayMusic
+  m_EditorClassIdentifier: 
+  Path: event:/Music/GameplayMusic
+  Guid:
+    Data1: 2035726900
+    Data2: 1306178186
+    Data3: -2126969173
+    Data4: -301796264
+  Banks:
+  - {fileID: 1176748250486121812}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 17493

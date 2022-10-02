@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{aea011e5-ce96-4e1d-b7a2-e156429ba0ea}">
 		<property name="assetPath">
-			<value>Longtube - Donk 5.wav</value>
+			<value>SFX/Longtube - Donk 5.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

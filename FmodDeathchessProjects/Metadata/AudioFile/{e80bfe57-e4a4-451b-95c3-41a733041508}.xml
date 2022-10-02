@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{e80bfe57-e4a4-451b-95c3-41a733041508}">
 		<property name="assetPath">
-			<value>SFX_EggDivider_Strum_01 [2020-10-02 160104].wav</value>
+			<value>SFX/SFX_EggDivider_Strum_01 [2020-10-02 160104].wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
