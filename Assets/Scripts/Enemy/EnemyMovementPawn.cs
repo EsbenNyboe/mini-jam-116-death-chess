@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class EnemyMovementPawn : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed;
+    [Range(0.001f, 1f)] [SerializeField] private float moveSpeed;
+    private float _moveProgress;
 
     private float _timer;
     [SerializeField] private float moveWaitTime;
@@ -79,6 +80,7 @@ public class EnemyMovementPawn : MonoBehaviour
                         GetKilled();
                         return;
                     }
+
                     targetCell = new Vector2Int(GameGridScript.Instance.width - 1, yTarget);
                 }
 
@@ -127,6 +129,13 @@ public class EnemyMovementPawn : MonoBehaviour
 
     private void Move()
     {
+        _moveProgress += moveSpeed;
+        if (_moveProgress > 1)
+        {
+            
+        }
+        Vector3 interpolatedPosition = Vector3.Lerp(_startMovingPosition, _currentTargetPosition, moveSpeed);
+        
         if (transform.rotation.x < -0.001f || transform.rotation.x > 0.001f)
         {
             return;
@@ -150,6 +159,31 @@ public class EnemyMovementPawn : MonoBehaviour
             _isMoving = false;
         }
     }
+    // private void Move()
+    // {
+    //     if (transform.rotation.x < -0.001f || transform.rotation.x > 0.001f)
+    //     {
+    //         return;
+    //     }
+    //
+    //     if (transform.position.x < _currentTargetPosition.x)
+    //     {
+    //         // transform.Translate(new Vector3(moveSpeed, 0, 0));
+    //         _jumpSpeed -= jumpGravity;
+    //         Vector3 newPosition = transform.position +
+    //                               new Vector3(moveSpeed * gridMovePattern.x, _jumpSpeed, moveSpeed * gridMovePattern.y);
+    //         if (newPosition.y < _startMovingPosition.y)
+    //         {
+    //             newPosition.y = _startMovingPosition.y;
+    //         }
+    //
+    //         transform.position = newPosition;
+    //     }
+    //     else
+    //     {
+    //         _isMoving = false;
+    //     }
+    // }
 
 
     public void GetHurt()
