@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6002513429043252726
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7896954384428037960}
+  m_Layer: 0
+  m_Name: ParticlePos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7896954384428037960
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6002513429043252726}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.57, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 6572215980128260094}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7805435301378569500
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,7 +143,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4026685056276793169, guid: 751178c023c703546946927a4d622ddb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.48
+      value: 4.34
       objectReference: {fileID: 0}
     - target: {fileID: 4026685056276793169, guid: 751178c023c703546946927a4d622ddb, type: 3}
       propertyPath: m_LocalPosition.y
@@ -120,7 +151,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4026685056276793169, guid: 751178c023c703546946927a4d622ddb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.249173
+      value: 7.54
       objectReference: {fileID: 0}
     - target: {fileID: 4026685056276793169, guid: 751178c023c703546946927a4d622ddb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -153,6 +184,10 @@ PrefabInstance:
     - target: {fileID: 4371438423856176619, guid: 751178c023c703546946927a4d622ddb, type: 3}
       propertyPath: m_Name
       value: EnemyPawnStateTest
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371438423856176619, guid: 751178c023c703546946927a4d622ddb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4371438423856176619, guid: 751178c023c703546946927a4d622ddb, type: 3}
       propertyPath: m_TagString
@@ -254,4 +289,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4d05d97811ea1640bd8ddb2960f8e73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particleToSpawn: {fileID: 156040, guid: e9c841a9e84aafb469eb43096c376383, type: 3}
+  ragdollTransform: {fileID: 7896954384428037960}
+  particleToSpawn: {fileID: 138368, guid: f8883d92f19db3e4a8bdae55db7ebc94, type: 3}
+  particleToKill: {fileID: 114290, guid: 6a40e463cf4b2ed48a1a27012f487135, type: 3}
+--- !u!4 &6572215980128260094 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4580614420170651145, guid: 751178c023c703546946927a4d622ddb, type: 3}
+  m_PrefabInstance: {fileID: 7252113813929818615}
+  m_PrefabAsset: {fileID: 0}
