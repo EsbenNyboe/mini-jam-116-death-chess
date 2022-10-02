@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1717119057167668227}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 14.04, z: 0}
-  m_LocalScale: {x: 0.098437, y: 0.098437, z: 0.098437}
+  m_LocalScale: {x: 0.1331014, y: 0.1331014, z: 0.1331014}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1508576344923258849}
@@ -44,7 +44,7 @@ Rigidbody:
   m_GameObject: {fileID: 1717119057167668227}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 2
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -78,8 +78,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 1717119057167668227}
-  projectileSpeed: 5
-  projectileHeight: 0.1
+  projectileSpeed: 4
+  projectileHeight: 2
   timeToDestroy: 2
 --- !u!1 &7663337999776296154
 GameObject:
