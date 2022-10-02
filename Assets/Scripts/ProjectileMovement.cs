@@ -19,6 +19,8 @@ public class ProjectileMovement : MonoBehaviour
         rb.AddTorque(randomVector);
 
         Destroy(gameObject, timeToDestroy);
+        
+        // PLAY SOUND: SHOOT
     }
 
 
@@ -39,14 +41,10 @@ public class ProjectileMovement : MonoBehaviour
                 hasHit = true;
 
                 boxCollider.size = new Vector3(impactRadius, impactRadius, impactRadius);
-                Debug.Log("Enemy HIT!");
+                // PLAY SOUND: KILL
                 other.rigidbody.detectCollisions = false;
                 other.gameObject.GetComponentInParent<EnemyMovementPawn>().GetKilled();
                 break;
-            //
-            // default:
-            // Debug.Log("Not HIT!");
-            // break;
         }
     }
 

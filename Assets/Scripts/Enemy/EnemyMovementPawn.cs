@@ -13,6 +13,7 @@ public class EnemyMovementPawn : MonoBehaviour
     [SerializeField] private float moveWaitTime;
 
     private bool _isMoving;
+    private bool _isJumping;
     private Vector3 _startMovingPosition;
 
     [SerializeField] private Rigidbody enemyRigidbody;
@@ -116,6 +117,7 @@ public class EnemyMovementPawn : MonoBehaviour
                 _currentTargetPosition = GameGridScript.Instance.GetWorldPosFromGridPos(_currentTargetGridCell);
 
                 _isMoving = true;
+                _isJumping = true;
                 _jumpSpeed = jumpPower;
                 _startMovingPosition = transform.position;
             }
@@ -144,12 +146,18 @@ public class EnemyMovementPawn : MonoBehaviour
         {
             return;
         }
-        
-        _jumpSpeed -= jumpGravity;
-        float newPositionY = transform.position.y + _jumpSpeed;
-        if (newPositionY < _startMovingPosition.y)
+
+        float newPositionY = _startMovingPosition.y;
+        if (_isJumping)
         {
-            newPositionY = _startMovingPosition.y;
+            _jumpSpeed -= jumpGravity;
+            newPositionY = transform.position.y + _jumpSpeed;
+            if (newPositionY < _startMovingPosition.y)
+            {
+                newPositionY = _startMovingPosition.y;
+                _isJumping = false;
+                // PLAY SOUND: LAND
+            }
         }
         
         _moveProgress += moveSpeed;
