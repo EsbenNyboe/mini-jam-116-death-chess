@@ -115,6 +115,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{cd61c85d-97d1-42a5-9883-bb1683215f52}">
+		<property name="volume">
+			<value>-80</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -146,9 +149,6 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{9620bddd-98c5-4ded-8136-60c8168a42dc}">
-		<property name="volume">
-			<value>-80</value>
-		</property>
 		<property name="name">
 			<value>PlopSFX</value>
 		</property>

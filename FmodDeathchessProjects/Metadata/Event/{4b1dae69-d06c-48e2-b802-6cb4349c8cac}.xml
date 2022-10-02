@@ -107,6 +107,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{a6315112-a379-423c-88a5-55ee8882a8f1}">
+		<property name="volume">
+			<value>-80</value>
+		</property>
 		<property name="name">
 			<value>PlopSFX</value>
 		</property>
