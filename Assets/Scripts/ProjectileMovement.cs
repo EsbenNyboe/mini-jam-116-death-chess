@@ -29,17 +29,18 @@ public class ProjectileMovement : MonoBehaviour
             {
                 case "Enemy":
                 Debug.Log("Enemy HIT!");
+                other.gameObject.GetComponentInParent<EnemyMovementPawn>().GetKilled();
                 break;
-
-                default:
-                Debug.Log("Not HIT!");
-                break;
+                //
+                // default:
+                // Debug.Log("Not HIT!");
+                // break;
             }    
         }
 
     private void ProjectileTrajectory()
     {
-        Vector3 projectilePath = new Vector3(0f, projectileHeight, projectileSpeed);
+        Vector3 projectilePath = new Vector3(- projectileSpeed, projectileHeight, 0);
         transform.localPosition += projectilePath * Time.deltaTime;
     }
 }

@@ -9,7 +9,7 @@ public class TestPlayerControls : MonoBehaviour
     float _moveVertical = 0f;
     [SerializeField] GameObject projectileSpawn;
     [SerializeField] GameObject meleeSpawn;
-    [SerializeField] Transform playerTransform;
+    [SerializeField] Transform attackTransform;
     [SerializeField] float acceleration = 0.1f;
     [SerializeField] float decelaration = 0.1f;
 
@@ -26,9 +26,9 @@ public class TestPlayerControls : MonoBehaviour
         {
             Vector3 meleePos = new Vector3(0f, 0f, 1f);
             GameObject melee = Instantiate(meleeSpawn,
-            playerTransform.position + meleePos,
+            attackTransform.position + meleePos,
             meleeSpawn.transform.rotation,
-            playerTransform);
+            attackTransform);
             melee.SetActive(true);
         }
     }
@@ -38,8 +38,8 @@ public class TestPlayerControls : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             GameObject projectile = Instantiate(projectileSpawn,
-            playerTransform.position,
-            playerTransform.rotation);
+            attackTransform.position,
+            attackTransform.rotation);
             projectile.SetActive(true);
         }
     }
@@ -54,23 +54,23 @@ public class TestPlayerControls : MonoBehaviour
 
     private void PlayerVerticalMovement()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.D))
         {
             _moveVertical = 0f;
         }
 
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.A))
         {
             _moveVertical = 0f;
         }
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.D))
         {
             _moveVertical += acceleration;
         }
 
 
-        else if (Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.A))
         {
             _moveVertical -= acceleration;
         }
@@ -84,22 +84,22 @@ public class TestPlayerControls : MonoBehaviour
 
     private void PlayerHorizontalMovement()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             _moveHorizontal = 0f;
         }
 
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.S))
         {
             _moveHorizontal = 0f;
         }
 
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.S))
         {
             _moveHorizontal += acceleration;
         }
 
-        else if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.W))
         {
             _moveHorizontal -= acceleration;
         }
