@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TestPlayerControls : MonoBehaviour
-{    
-    
+{
     float _moveHorizontal = 0f;
     float _moveVertical = 0f;
     [SerializeField] GameObject projectileSpawn;
@@ -12,6 +11,11 @@ public class TestPlayerControls : MonoBehaviour
     [SerializeField] Transform attackTransform;
     [SerializeField] float acceleration = 0.1f;
     [SerializeField] float decelaration = 0.1f;
+
+    [SerializeField] private float xMin;
+    [SerializeField] private float xMax;
+    [SerializeField] private float zMin;
+    [SerializeField] private float zMax;
 
     void Update()
     {
@@ -26,9 +30,9 @@ public class TestPlayerControls : MonoBehaviour
         {
             Vector3 meleePos = new Vector3(0f, 0f, 1f);
             GameObject melee = Instantiate(meleeSpawn,
-            attackTransform.position + meleePos,
-            meleeSpawn.transform.rotation,
-            attackTransform);
+                attackTransform.position + meleePos,
+                meleeSpawn.transform.rotation,
+                attackTransform);
             melee.SetActive(true);
         }
     }
@@ -38,8 +42,8 @@ public class TestPlayerControls : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             GameObject projectile = Instantiate(projectileSpawn,
-            attackTransform.position,
-            attackTransform.rotation);
+                attackTransform.position,
+                Random.rotation);
             projectile.SetActive(true);
         }
     }
@@ -48,8 +52,15 @@ public class TestPlayerControls : MonoBehaviour
     {
         PlayerHorizontalMovement();
         PlayerVerticalMovement();
+        Transform t = transform;
+
         Vector3 velocity = new Vector3(_moveHorizontal, 0f, _moveVertical);
-        transform.localPosition += velocity * Time.deltaTime;
+        Vector3 newPositionLocal = t.position + velocity * Time.deltaTime;
+
+        newPositionLocal.x = Mathf.Clamp(newPositionLocal.x, xMin, xMax);
+        newPositionLocal.z = Mathf.Clamp(newPositionLocal.z, zMin, zMax);
+        
+        t.localPosition = newPositionLocal;
     }
 
     private void PlayerVerticalMovement()
@@ -78,7 +89,6 @@ public class TestPlayerControls : MonoBehaviour
         else
         {
             VerticalDecel();
-
         }
     }
 

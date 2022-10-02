@@ -5,14 +5,15 @@ using UnityEngine;
 
 public class EnemyMovementPawn : MonoBehaviour
 {
+    [Range(0.001f, 1f)] [SerializeField] private float moveSpeed;
+    private float _moveProgress;
     [SerializeField] private Animator animator;
-
-    [SerializeField] private float moveSpeed;
 
     private float _timer;
     [SerializeField] private float moveWaitTime;
 
     private bool _isMoving;
+    private bool _isJumping;
     private Vector3 _startMovingPosition;
 
     [SerializeField] private Rigidbody enemyRigidbody;
@@ -34,15 +35,20 @@ public class EnemyMovementPawn : MonoBehaviour
     [SerializeField] private float timeToClearOccupation;
     private Vector2Int _previousTargetGridCell = new Vector2Int(-1, -1);
 
+    [SerializeField] private bool useDirectionToggle;
+
     private void Start()
     {
-        animator.SetBool("isAlive", true);
+        if (animator) 
+            animator.SetBool("isAlive", true);
 
         EnablePhysics(false);
         _timer = moveWaitTime * initialMoveWaitTimeFactor;
         _currentTargetGridCell = GameGridScript.Instance.GetGridPosFromWorld(transform.position);
         _previousTargetGridCell = _currentTargetGridCell;
         SetOccupation(true, _currentTargetGridCell);
+        
+        // PLAY SOUND: SPAWN
     }
 
     void Update()
@@ -71,6 +77,11 @@ public class EnemyMovementPawn : MonoBehaviour
             {
                 _timer = 0;
 
+                if (useDirectionToggle)
+                {
+                    gridMovePattern.y = -gridMovePattern.y;
+                }
+                
                 Vector2Int currentGridCell = GameGridScript.Instance.GetGridPosFromWorld(transform.position);
                 int xTarget = currentGridCell.x + gridMovePattern.x;
                 int yTarget = currentGridCell.y + gridMovePattern.y;
@@ -83,6 +94,7 @@ public class EnemyMovementPawn : MonoBehaviour
                         GetKilled();
                         return;
                     }
+
                     targetCell = new Vector2Int(GameGridScript.Instance.width - 1, yTarget);
                 }
 
@@ -107,6 +119,7 @@ public class EnemyMovementPawn : MonoBehaviour
                 _currentTargetPosition = GameGridScript.Instance.GetWorldPosFromGridPos(_currentTargetGridCell);
 
                 _isMoving = true;
+                _isJumping = true;
                 _jumpSpeed = jumpPower;
                 _startMovingPosition = transform.position;
             }
@@ -136,24 +149,60 @@ public class EnemyMovementPawn : MonoBehaviour
             return;
         }
 
-        if (transform.position.x < _currentTargetPosition.x)
+        float newPositionY = _startMovingPosition.y;
+        if (_isJumping)
         {
-            // transform.Translate(new Vector3(moveSpeed, 0, 0));
             _jumpSpeed -= jumpGravity;
-            Vector3 newPosition = transform.position +
-                                  new Vector3(moveSpeed * gridMovePattern.x, _jumpSpeed, moveSpeed * gridMovePattern.y);
-            if (newPosition.y < _startMovingPosition.y)
+            newPositionY = transform.position.y + _jumpSpeed;
+            if (newPositionY < _startMovingPosition.y)
             {
-                newPosition.y = _startMovingPosition.y;
+                newPositionY = _startMovingPosition.y;
+                _isJumping = false;
+                // PLAY SOUND: LAND
             }
+        }
+        
+        _moveProgress += moveSpeed;
 
-            transform.position = newPosition;
-        }
-        else
+        Vector3 interpolatedPosition = Vector3.Lerp(_startMovingPosition, _currentTargetPosition, _moveProgress);
+        
+        if (_moveProgress > 1)
         {
+            _moveProgress = 0;
             _isMoving = false;
+            interpolatedPosition.x = _currentTargetPosition.x;
+            interpolatedPosition.z = _currentTargetPosition.z;
         }
+
+        interpolatedPosition.y = newPositionY;
+
+        transform.position = interpolatedPosition;
     }
+    // private void Move()
+    // {
+    //     if (transform.rotation.x < -0.001f || transform.rotation.x > 0.001f)
+    //     {
+    //         return;
+    //     }
+    //
+    //     if (transform.position.x < _currentTargetPosition.x)
+    //     {
+    //         // transform.Translate(new Vector3(moveSpeed, 0, 0));
+    //         _jumpSpeed -= jumpGravity;
+    //         Vector3 newPosition = transform.position +
+    //                               new Vector3(moveSpeed * gridMovePattern.x, _jumpSpeed, moveSpeed * gridMovePattern.y);
+    //         if (newPosition.y < _startMovingPosition.y)
+    //         {
+    //             newPosition.y = _startMovingPosition.y;
+    //         }
+    //
+    //         transform.position = newPosition;
+    //     }
+    //     else
+    //     {
+    //         _isMoving = false;
+    //     }
+    // }
 
 
     public void GetHurt()
@@ -163,7 +212,8 @@ public class EnemyMovementPawn : MonoBehaviour
 
     public void GetKilled()
     {
-        animator.SetBool("isAlive", false);
+        if (animator) 
+            animator.SetBool("isAlive", false);
         EnablePhysics(true);
         Destroy(gameObject, timeToClearOccupation + despawnTimer);
         StartCoroutine(ClearPreviousOccupation(_previousTargetGridCell));
