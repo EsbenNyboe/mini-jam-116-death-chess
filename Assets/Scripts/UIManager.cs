@@ -45,12 +45,18 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
+        Application.targetFrameRate = 60;
         _currentLives = lives;
         _player = FindObjectOfType<TestPlayerControls>();
     }
 
     void Update()
     {
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
         scoreText.text = "Score: " + _score;
         healthText.text = "Lives: " + _currentLives;
 
