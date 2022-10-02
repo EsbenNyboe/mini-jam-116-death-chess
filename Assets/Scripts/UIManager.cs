@@ -9,9 +9,12 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
-    
-    [FormerlySerializedAs("_scoreText")] [SerializeField] Text scoreText;
-    [FormerlySerializedAs("_timeText")] [SerializeField] Text healthText;
+
+    [FormerlySerializedAs("_scoreText")] [SerializeField]
+    Text scoreText;
+
+    [FormerlySerializedAs("_timeText")] [SerializeField]
+    Text healthText;
 
     private int _score;
     [SerializeField] private int lives = 10;
@@ -22,6 +25,8 @@ public class UIManager : MonoBehaviour
     private TestPlayerControls _player;
 
     private float _gameOverSinkSpeed;
+
+    private float _respawnTimer;
 
     private void Awake()
     {
@@ -56,13 +61,19 @@ public class UIManager : MonoBehaviour
             {
                 _gameOverSinkSpeed = 0;
             }
+
             _player.gameObject.transform.localPosition -= new Vector3(0, _gameOverSinkSpeed, 0);
-            if (Input.GetKeyDown(KeyCode.Space))
+            _respawnTimer += Time.deltaTime;
+            if (_respawnTimer > 3f)
             {
-                _score = 0;
-                _currentLives = lives;
-                _gameOver = false;
-                SceneManager.LoadScene(0);
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    _score = 0;
+                    _currentLives = lives;
+                    _gameOver = false;
+                    _respawnTimer = 0;
+                    SceneManager.LoadScene(0);
+                }
             }
         }
     }
@@ -82,6 +93,7 @@ public class UIManager : MonoBehaviour
             _gameOverSinkSpeed = 0.005f;
             _player.enabled = false;
         }
+
         _currentLives -= points;
         if (_currentLives < 0)
         {
