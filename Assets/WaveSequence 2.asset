@@ -41,6 +41,14 @@ MonoBehaviour:
     count: 1
     spawnWaitTime: 5
     serialLogic: 2
+  - enemy: {fileID: 939702594336390790, guid: 95995c1525559a941ab7946d3dec8bad, type: 3}
+    count: 3
+    spawnWaitTime: 2
+    serialLogic: 0
+  - enemy: {fileID: 939702594336390790, guid: 95995c1525559a941ab7946d3dec8bad, type: 3}
+    count: 6
+    spawnWaitTime: 1
+    serialLogic: 0
   - enemy: {fileID: 3373812082633973840, guid: 7bfd83399ca06e44dbe19302f300ecc3, type: 3}
     count: 3
     spawnWaitTime: 2
@@ -62,6 +70,6 @@ MonoBehaviour:
     spawnWaitTime: 0.125
     serialLogic: 0
   - enemy: {fileID: 3373812082633973840, guid: 7bfd83399ca06e44dbe19302f300ecc3, type: 3}
-    count: 96
-    spawnWaitTime: 0.0625
+    count: 48
+    spawnWaitTime: 0.1
     serialLogic: 0
