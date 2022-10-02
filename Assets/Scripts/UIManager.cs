@@ -5,15 +5,15 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-[SerializeField] Text _scoreText;
-[SerializeField] Text _timeText;
+    [SerializeField] Text _scoreText;
+    [SerializeField] Text _timeText;
 
-float pawnPts = 0f;
-float runnerPts = 0f;
-float towerPts = 0f;
-float knightPts = 0f;
-float queenPts = 0f;
-float kingPts = 0f;
+    float pawnPts = 0f;
+    float runnerPts = 0f;
+    float towerPts = 0f;
+    float knightPts = 0f;
+    float queenPts = 0f;
+    float kingPts = 0f;
 
     void Start()
     {
@@ -22,18 +22,18 @@ float kingPts = 0f;
     }
 
     void Update()
-    {        
+    {
         float timeCalc = Time.fixedTime;
 
-        float scoreCalc = 
-        (pawnPts + 
-        runnerPts + 
-        towerPts +
-        knightPts +
-        queenPts +
-        kingPts) /
-        timeCalc;
-        
+        float scoreCalc =
+            (pawnPts +
+             runnerPts +
+             towerPts +
+             knightPts +
+             queenPts +
+             kingPts) /
+            timeCalc;
+
         if (Input.GetKeyDown(KeyCode.P))
         {
             pawnPts += 1f;
@@ -64,7 +64,7 @@ float kingPts = 0f;
             kingPts += 100f;
         }
 
-        _scoreText.text = "Score: " + (int) scoreCalc + " pts";
-        _timeText.text = "Time: " + (int) timeCalc + " sec";
+        _scoreText.text = "Score: " + (int)scoreCalc + " pts";
+        _timeText.text = "Time: " + (int)timeCalc + " sec";
     }
 }
