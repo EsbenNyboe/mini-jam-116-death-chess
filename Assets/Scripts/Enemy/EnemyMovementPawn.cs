@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class EnemyMovementPawn : MonoBehaviour
 {
-    [SerializeField] private Animator animator;
-
     [SerializeField] private float moveSpeed;
 
     private float _timer;
@@ -41,16 +39,14 @@ public class EnemyMovementPawn : MonoBehaviour
         _currentTargetGridCell = GameGridScript.Instance.GetGridPosFromWorld(transform.position);
         _previousTargetGridCell = _currentTargetGridCell;
         SetOccupation(true, _currentTargetGridCell);
-
-        animator.SetBool("isAlive", true);
     }
 
     void Update()
     {
-        // if (Input.GetKeyDown(KeyCode.Return))
-        // {
-        //     GetKilled();
-        // }
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            // Debug.Log();
+        }
 
         if (_isRagDoll == false)
         {
@@ -76,18 +72,29 @@ public class EnemyMovementPawn : MonoBehaviour
                 int yTarget = currentGridCell.y + gridMovePattern.y;
 
                 Vector2Int targetCell = new Vector2Int(xTarget, yTarget);
-                if (targetCell.x >= GameGridScript.Instance.width ||
-                    targetCell.y >= GameGridScript.Instance.height)
+                if (targetCell.x >= GameGridScript.Instance.width)
                 {
-                    GetKilled();
-                    return;
+                    if (currentGridCell.x >= GameGridScript.Instance.width - 1)
+                    {
+                        GetKilled();
+                        return;
+                    }
+                    targetCell = new Vector2Int(GameGridScript.Instance.width - 1, yTarget);
                 }
+
+                if (targetCell.y < 0 || targetCell.y >= GameGridScript.Instance.width)
+                {
+                    gridMovePattern.y = -gridMovePattern.y;
+                    targetCell.y = currentGridCell.y + gridMovePattern.y;
+                }
+
                 GridCellScript cellScript = GameGridScript.Instance.GetGridCellScriptFromGridPos(targetCell);
 
                 if (cellScript.isOccupied)
                 {
                     return;
                 }
+
                 _currentTargetGridCell = targetCell;
                 SetOccupation(true, _currentTargetGridCell);
                 StartCoroutine(ClearPreviousOccupation(_previousTargetGridCell));
@@ -110,6 +117,7 @@ public class EnemyMovementPawn : MonoBehaviour
         // gridCellScript.objectInThisGridSpace = null;
         // gridCellScript.isOccupied = false;
     }
+
     private void SetOccupation(bool willOccupy, Vector2Int cellVector) // to do: set false when killed
     {
         GridCellScript gridCellScript = GameGridScript.Instance.GetGridCellScriptFromGridPos(cellVector);
@@ -128,7 +136,8 @@ public class EnemyMovementPawn : MonoBehaviour
         {
             // transform.Translate(new Vector3(moveSpeed, 0, 0));
             _jumpSpeed -= jumpGravity;
-            Vector3 newPosition = transform.position + new Vector3(moveSpeed, _jumpSpeed, 0);
+            Vector3 newPosition = transform.position +
+                                  new Vector3(moveSpeed * gridMovePattern.x, _jumpSpeed, moveSpeed * gridMovePattern.y);
             if (newPosition.y < _startMovingPosition.y)
             {
                 newPosition.y = _startMovingPosition.y;
@@ -145,14 +154,10 @@ public class EnemyMovementPawn : MonoBehaviour
 
     public void GetHurt()
     {
-        animator.SetTrigger("getHurt");
-
     }
-    
+
     public void GetKilled()
     {
-        animator.SetBool("isAlive", false);
-
         EnablePhysics(true);
         Destroy(gameObject, timeToClearOccupation + despawnTimer);
         StartCoroutine(ClearPreviousOccupation(_previousTargetGridCell));
