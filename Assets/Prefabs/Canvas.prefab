@@ -195,8 +195,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e816de86e3bf1fc47827d318766dd800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreText: {fileID: 5225066868046141007}
-  _timeText: {fileID: 5225066868983086188}
+  scoreText: {fileID: 5225066868046141007}
+  timeText: {fileID: 5225066868983086188}
+  timerFactor: 0.1
+  lives: 10
 --- !u!1 &5225066868983086190
 GameObject:
   m_ObjectHideFlags: 0
