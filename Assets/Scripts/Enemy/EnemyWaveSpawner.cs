@@ -10,12 +10,17 @@ public class EnemyWaveSpawner : MonoBehaviour
     [SerializeField] private WaveSequence[] waveSequences;
     private int _spawnIndex;
 
-    [SerializeField] private GameGridScript gameGridScript;
+    private GameGridScript _gameGridScript;
 
     private int _currentSequence;
     private int _currentWave;
     private int _currentCount;
     private float _currentTime;
+
+    private void Start()
+    {
+        _gameGridScript = GameGridScript.Instance;
+    }
 
     private void Update()
     {
@@ -45,16 +50,16 @@ public class EnemyWaveSpawner : MonoBehaviour
 
     private void SpawnEnemyNew()
     {
-        _spawnIndex = SerialLogicHelper.RollNewIndex(gameGridScript.height, 
+        _spawnIndex = SerialLogicHelper.RollNewIndex(_gameGridScript.height, 
             waveSequences[_currentSequence].Waves[_currentWave].serialLogic, _spawnIndex);
 
-        GridCellScript gridCellScript = gameGridScript.GetGridCellScriptFromGridPos(new Vector2Int(0, _spawnIndex));
+        GridCellScript gridCellScript = _gameGridScript.GetGridCellScriptFromGridPos(new Vector2Int(0, _spawnIndex));
         if (gridCellScript.isOccupied)
         {
             _currentCount--;
             return;
         }
-        Vector3 spawnPosition = gameGridScript.GetWorldPosFromGridPos(new Vector2Int(0, _spawnIndex));
+        Vector3 spawnPosition = _gameGridScript.GetWorldPosFromGridPos(new Vector2Int(0, _spawnIndex));
 
         if (waveSequences[_currentSequence].Waves[_currentWave].enemy)
         {
