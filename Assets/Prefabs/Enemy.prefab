@@ -114,6 +114,7 @@ GameObject:
   - component: {fileID: 1238535184778897498}
   - component: {fileID: 8802444998060837675}
   - component: {fileID: 8450220744926319290}
+  - component: {fileID: -407679437401681597}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -196,6 +197,18 @@ MonoBehaviour:
   ragdollTransform: {fileID: 1788677627462811587}
   particleToSpawn: {fileID: 138368, guid: f8883d92f19db3e4a8bdae55db7ebc94, type: 3}
   particleToKill: {fileID: 114290, guid: 6a40e463cf4b2ed48a1a27012f487135, type: 3}
+--- !u!114 &-407679437401681597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3263950834913619095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c9f88712d21fc14086f5657d334ef28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5820385876605064270
 GameObject:
   m_ObjectHideFlags: 0
