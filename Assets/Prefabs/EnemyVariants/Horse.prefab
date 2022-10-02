@@ -12,6 +12,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -2432090755550338912, guid: 65570abfa04f8ea40b36f2ec828088e6, type: 3}
     - target: {fileID: 1238535184778897498, guid: bc3965278d0dd3d4991fdb04d6cc82d9, type: 3}
+      propertyPath: moveSpeed
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 1238535184778897498, guid: bc3965278d0dd3d4991fdb04d6cc82d9, type: 3}
+      propertyPath: jumpGravity
+      value: 0.0025
+      objectReference: {fileID: 0}
+    - target: {fileID: 1238535184778897498, guid: bc3965278d0dd3d4991fdb04d6cc82d9, type: 3}
       propertyPath: gridMovePattern.x
       value: 2
       objectReference: {fileID: 0}
