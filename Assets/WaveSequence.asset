@@ -67,5 +67,5 @@ MonoBehaviour:
     serialLogic: 0
   - enemy: {fileID: 0}
     count: 1
-    spawnWaitTime: 10
+    spawnWaitTime: 5
     serialLogic: 0
