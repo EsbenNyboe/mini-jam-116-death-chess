@@ -151,13 +151,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a61d88fe5b80e154e96139c93684892e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.05
+  moveSpeed: 2.3
   animator: {fileID: 8802444998060837675}
   moveWaitTime: 1
   enemyRigidbody: {fileID: 8173646202169254077}
   despawnTimer: 2
-  jumpPower: 0.055
-  jumpGravity: 0.0055
+  jumpPower: 0.06
+  jumpGravity: 0.3
   initialMoveWaitTimeFactor: 0
   gridMovePattern: {x: 1, y: 0}
   timeToClearOccupation: 0.1

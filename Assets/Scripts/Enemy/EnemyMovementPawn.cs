@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemyMovementPawn : MonoBehaviour
 {
-    [Range(0.001f, 1f)] [SerializeField] private float moveSpeed;
+    [Range(0.001f, 10f)] [SerializeField] private float moveSpeed;
     private float _moveProgress;
     [SerializeField] private Animator animator;
 
@@ -153,7 +153,7 @@ public class EnemyMovementPawn : MonoBehaviour
         float newPositionY = _startMovingPosition.y;
         if (_isJumping)
         {
-            _jumpSpeed -= jumpGravity;
+            _jumpSpeed -= jumpGravity * Time.deltaTime;
             newPositionY = transform.position.y + _jumpSpeed;
             if (newPositionY < _startMovingPosition.y)
             {
@@ -162,8 +162,8 @@ public class EnemyMovementPawn : MonoBehaviour
                 FMODUnity.RuntimeManager.PlayOneShot("event:/EnemyLand", transform.position);
             }
         }
-        
-        _moveProgress += moveSpeed;
+
+        _moveProgress += moveSpeed * Time.deltaTime;
 
         Vector3 interpolatedPosition = Vector3.Lerp(_startMovingPosition, _currentTargetPosition, _moveProgress);
         
