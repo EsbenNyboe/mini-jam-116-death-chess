@@ -22,7 +22,7 @@ public class UIManager : MonoBehaviour
 
     private bool _gameOver;
 
-    private TestPlayerControls _player;
+    private PlayerControls _player;
 
     private float _gameOverSinkSpeed;
 
@@ -45,9 +45,8 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        Application.targetFrameRate = 60;
         _currentLives = lives;
-        _player = FindObjectOfType<TestPlayerControls>();
+        _player = FindObjectOfType<PlayerControls>();
     }
 
     void Update()
