@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestPlayerControls : MonoBehaviour
+public class PlayerControls : MonoBehaviour
 {
     float _moveHorizontal = 0f;
     float _moveVertical = 0f;
