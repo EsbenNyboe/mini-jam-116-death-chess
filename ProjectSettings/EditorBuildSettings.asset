@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/EnviomentTestScene 1.unity
-    guid: 86efef56147cde741ac9525ed1ecb85a
+    path: Assets/Scenes/DeathChess.unity
+    guid: 5d8b7a587b842644997cf243590a9c7b
   m_configObjects: {}
