@@ -162,6 +162,7 @@ MonoBehaviour:
   gridMovePattern: {x: 1, y: 0}
   timeToClearOccupation: 0.1
   useDirectionToggle: 0
+  chasePlayer: 1
 --- !u!95 &8802444998060837675
 Animator:
   serializedVersion: 4

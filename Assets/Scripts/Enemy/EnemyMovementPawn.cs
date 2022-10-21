@@ -37,6 +37,8 @@ public class EnemyMovementPawn : MonoBehaviour
 
     [SerializeField] private bool useDirectionToggle;
 
+    [SerializeField] private bool chasePlayer;
+
     private void Start()
     {
         if (animator) 
@@ -80,10 +82,42 @@ public class EnemyMovementPawn : MonoBehaviour
                 {
                     gridMovePattern.y = -gridMovePattern.y;
                 }
+
+                int xMoveAmount = gridMovePattern.x; 
+                int yMoveAmount = gridMovePattern.y;
+
+                if (chasePlayer)
+                {
+                    Vector2Int playerGridPosition = PlayerPositionTracker.Instance.playerGridPosition;
+                    Vector2Int distanceToPlayer = playerGridPosition - _previousTargetGridCell;
+
+                    bool useYAxis = Mathf.Abs(distanceToPlayer.y) > Mathf.Abs(distanceToPlayer.x);
+                
+                    if (useYAxis == false)
+                    {
+                        if (distanceToPlayer.x < 0)
+                        {
+                            xMoveAmount = -gridMovePattern.x;
+                        }
+                    }
+                    else
+                    {
+                        if (distanceToPlayer.y > 0)
+                        {
+                            yMoveAmount = gridMovePattern.x;
+                            xMoveAmount = -gridMovePattern.y;
+                        }
+                        else
+                        {
+                            xMoveAmount = gridMovePattern.y;
+                            yMoveAmount = -gridMovePattern.x;
+                        }
+                    }
+                }
                 
                 Vector2Int currentGridCell = GameGridScript.Instance.GetGridPosFromWorld(transform.position);
-                int xTarget = currentGridCell.x + gridMovePattern.x;
-                int yTarget = currentGridCell.y + gridMovePattern.y;
+                int xTarget = currentGridCell.x + xMoveAmount;
+                int yTarget = currentGridCell.y + yMoveAmount;
 
                 Vector2Int targetCell = new Vector2Int(xTarget, yTarget);
                 if (targetCell.x >= GameGridScript.Instance.width)
