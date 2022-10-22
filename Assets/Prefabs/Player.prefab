@@ -43,9 +43,10 @@ GameObject:
   - component: {fileID: 3798861003005013734}
   - component: {fileID: 404754236594817650}
   - component: {fileID: 404754236594817651}
+  - component: {fileID: 8270940080288535629}
   m_Layer: 0
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,12 +126,27 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7122798873236374679}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -2432090755550338912, guid: a7f054ad52ec3674384f2f8a2e59e85f, type: 3}
+--- !u!114 &8270940080288535629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7122798873236374679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c32aa2b78bfe4c42b524e50e7027124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invulnerabilityLength: 0.3
+  playerStability: 0.0001
+  forceMultiplier: 10
 --- !u!1 &8317244178542034469
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,14 +172,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8317244178542034469}
-  m_LocalRotation: {x: 0.15610948, y: -0, z: -0, w: 0.98773974}
-  m_LocalPosition: {x: 1.6700006, y: 13.330001, z: -13.380006}
+  m_LocalRotation: {x: 0.08318002, y: -0, z: -0.000000007450579, w: 0.9965346}
+  m_LocalPosition: {x: 1.67, y: 7.91, z: -10.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2048975824825128876}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 17.962, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 9.543, y: 0, z: 0}
 --- !u!20 &8317244178542034471
 Camera:
   m_ObjectHideFlags: 0
@@ -247,8 +263,8 @@ Transform:
   m_GameObject: {fileID: 8317244179558035092}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 2.12, y: 0, z: 1.89}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.14, y: 0.14, z: 0.14}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2048975824825128876}
   m_Father: {fileID: 0}
@@ -266,11 +282,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e71442925e7b47a438a8b0ebad4d5dea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useRotationControls: 0
+  useRotationControls: 1
   rotationSpeed: 10
   rotationMin: -180
   rotationMax: 0
-  autoShootInterval: 0
+  autoShootInterval: 0.077
   projectileSpawn: {fileID: 1717119057167668227, guid: 89fe53625f606d3429aab27b62f8ea5f, type: 3}
   meleeSpawn: {fileID: 8786814547388624099, guid: 626e60f1989f2ba47b6c34efdb1817f0, type: 3}
   attackTransform: {fileID: 2124455236}
@@ -281,6 +297,7 @@ MonoBehaviour:
   xMax: 9
   zMin: 0
   zMax: 10
+  playerDamage: {fileID: 8270940080288535629}
 --- !u!114 &6207900490805314334
 MonoBehaviour:
   m_ObjectHideFlags: 0

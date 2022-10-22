@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5eac186c85a4b9ca99e832308119841, type: 3}
+  m_Name: PerformanceTest
+  m_EditorClassIdentifier: 
+  Waves:
+  - enemy: {fileID: 8651513445187116777, guid: 33f5791f4f8b5184b989247714912765, type: 3}
+    count: 1
+    spawnWaitTime: 0.01
+    serialLogic: 2
+    waitForClear: 1
+    onStartMusicTrigger: 0
+    onClearMusicTrigger: 0
+  - enemy: {fileID: 8651513445187116777, guid: 33f5791f4f8b5184b989247714912765, type: 3}
+    count: 10
+    spawnWaitTime: 0.01
+    serialLogic: 2
+    waitForClear: 1
+    onStartMusicTrigger: 0
+    onClearMusicTrigger: 0
+  - enemy: {fileID: 8651513445187116777, guid: 33f5791f4f8b5184b989247714912765, type: 3}
+    count: 50
+    spawnWaitTime: 0.01
+    serialLogic: 2
+    waitForClear: 1
+    onStartMusicTrigger: 0
+    onClearMusicTrigger: 0
+  - enemy: {fileID: 8651513445187116777, guid: 33f5791f4f8b5184b989247714912765, type: 3}
+    count: 100
+    spawnWaitTime: 0.01
+    serialLogic: 2
+    waitForClear: 1
+    onStartMusicTrigger: 0
+    onClearMusicTrigger: 0

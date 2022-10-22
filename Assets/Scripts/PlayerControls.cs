@@ -28,6 +28,8 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] private float zMin;
     [SerializeField] private float zMax;
 
+    [SerializeField] private PlayerDamage playerDamage;
+
     private void Start()
     {
         _rotationY = -90;
@@ -118,6 +120,7 @@ public class PlayerControls : MonoBehaviour
             {
                 newPosition = newPosition + velocity.z * transform.right;
             }
+            newPosition += playerDamage.CurrentForceOnPlayer * Time.deltaTime;
             newPosition.x = Mathf.Clamp(newPosition.x, xMin, xMax);
             newPosition.z = Mathf.Clamp(newPosition.z, zMin, zMax);
             // print(newPosition);

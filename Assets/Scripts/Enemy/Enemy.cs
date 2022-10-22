@@ -39,6 +39,9 @@ public class Enemy : MonoBehaviour
 
     public static Action<GameObject> OnEnemyKilled;
 
+    public int MoveAmountX { get; private set; }
+    public int MoveAmountY { get; private set; }
+
     private void Start()
     {
         if (animator) 
@@ -86,8 +89,8 @@ public class Enemy : MonoBehaviour
                 gridMovePattern.y = -gridMovePattern.y;
             }
 
-            int xMoveAmount = gridMovePattern.x;
-            int yMoveAmount = gridMovePattern.y;
+            MoveAmountX = gridMovePattern.x;
+            MoveAmountY = gridMovePattern.y;
 
             if (chasePlayer)
             {
@@ -100,27 +103,27 @@ public class Enemy : MonoBehaviour
                 {
                     if (distanceToPlayer.x < 0)
                     {
-                        xMoveAmount = -gridMovePattern.x;
+                        MoveAmountX = -gridMovePattern.x;
                     }
                 }
                 else
                 {
                     if (distanceToPlayer.y > 0)
                     {
-                        yMoveAmount = gridMovePattern.x;
-                        xMoveAmount = -gridMovePattern.y;
+                        MoveAmountY = gridMovePattern.x;
+                        MoveAmountX = -gridMovePattern.y;
                     }
                     else
                     {
-                        xMoveAmount = gridMovePattern.y;
-                        yMoveAmount = -gridMovePattern.x;
+                        MoveAmountX = gridMovePattern.y;
+                        MoveAmountY = -gridMovePattern.x;
                     }
                 }
             }
 
             Vector2Int currentGridCell = GameGridScript.Instance.GetGridPosFromWorld(transform.position);
-            int xTarget = currentGridCell.x + xMoveAmount;
-            int yTarget = currentGridCell.y + yMoveAmount;
+            int xTarget = currentGridCell.x + MoveAmountX;
+            int yTarget = currentGridCell.y + MoveAmountY;
 
             Vector2Int targetCell = new Vector2Int(xTarget, yTarget);
             if (targetCell.x >= GameGridScript.Instance.width)

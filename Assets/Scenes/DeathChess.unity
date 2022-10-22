@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &291580554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402,41 +402,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7081803191235042823, guid: b4703bc7aeaf83b4aad33d28bf3724a7, type: 3}
-      propertyPath: lookSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8317244178542034472, guid: b4703bc7aeaf83b4aad33d28bf3724a7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.67
-      objectReference: {fileID: 0}
-    - target: {fileID: 8317244178542034472, guid: b4703bc7aeaf83b4aad33d28bf3724a7, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 7.91
-      objectReference: {fileID: 0}
-    - target: {fileID: 8317244178542034472, guid: b4703bc7aeaf83b4aad33d28bf3724a7, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -10.86
-      objectReference: {fileID: 0}
-    - target: {fileID: 8317244178542034472, guid: b4703bc7aeaf83b4aad33d28bf3724a7, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9965346
-      objectReference: {fileID: 0}
-    - target: {fileID: 8317244178542034472, guid: b4703bc7aeaf83b4aad33d28bf3724a7, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.08318002
-      objectReference: {fileID: 0}
-    - target: {fileID: 8317244178542034472, guid: b4703bc7aeaf83b4aad33d28bf3724a7, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.000000007450579
-      objectReference: {fileID: 0}
-    - target: {fileID: 8317244178542034472, guid: b4703bc7aeaf83b4aad33d28bf3724a7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 9.543
-      objectReference: {fileID: 0}
-    - target: {fileID: 8317244179558035090, guid: b4703bc7aeaf83b4aad33d28bf3724a7, type: 3}
-      propertyPath: autoShootInterval
-      value: 0.077
+    - target: {fileID: 8270940080288535629, guid: b4703bc7aeaf83b4aad33d28bf3724a7, type: 3}
+      propertyPath: playerStability
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8317244179558035092, guid: b4703bc7aeaf83b4aad33d28bf3724a7, type: 3}
       propertyPath: m_Name
@@ -445,18 +413,6 @@ PrefabInstance:
     - target: {fileID: 8317244179558035093, guid: b4703bc7aeaf83b4aad33d28bf3724a7, type: 3}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8317244179558035093, guid: b4703bc7aeaf83b4aad33d28bf3724a7, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.14
-      objectReference: {fileID: 0}
-    - target: {fileID: 8317244179558035093, guid: b4703bc7aeaf83b4aad33d28bf3724a7, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.14
-      objectReference: {fileID: 0}
-    - target: {fileID: 8317244179558035093, guid: b4703bc7aeaf83b4aad33d28bf3724a7, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.14
       objectReference: {fileID: 0}
     - target: {fileID: 8317244179558035093, guid: b4703bc7aeaf83b4aad33d28bf3724a7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -498,12 +454,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8317244179558035093, guid: b4703bc7aeaf83b4aad33d28bf3724a7, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7081803191235042823, guid: b4703bc7aeaf83b4aad33d28bf3724a7, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4703bc7aeaf83b4aad33d28bf3724a7, type: 3}
 --- !u!114 &1579119919 stripped
 MonoBehaviour:
@@ -912,14 +863,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9140180963948895014, guid: 49a19ed50c5be2e4f8bf7d43591cb786, type: 3}
-      propertyPath: waveSequences.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: b93ac0bd53972044ca3611fdb7706d18, type: 2}
-    - target: {fileID: 9140180963948895014, guid: 49a19ed50c5be2e4f8bf7d43591cb786, type: 3}
-      propertyPath: waveSequences.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 0f1d279a1de963c44a008a46c71ba440, type: 2}
     - target: {fileID: 9140180963948895015, guid: 49a19ed50c5be2e4f8bf7d43591cb786, type: 3}
       propertyPath: m_Name
       value: WaveSpawner
