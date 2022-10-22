@@ -34,6 +34,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Animator animator;
     
     [SerializeField] private Rigidbody enemyRigidbody;
+    [SerializeField] private Rigidbody attackRigidbody;
     private bool _isRagDoll;
     private bool _isAlive = true;
 
@@ -41,6 +42,7 @@ public class Enemy : MonoBehaviour
 
     public int MoveAmountX { get; private set; }
     public int MoveAmountY { get; private set; }
+    private bool _isAttacking;
 
     private void Start()
     {
@@ -54,6 +56,8 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
+        attackRigidbody.detectCollisions = _isAttacking;
+        
         if (_isRagDoll == false)
         {
             if (_isMoving)
@@ -150,6 +154,7 @@ public class Enemy : MonoBehaviour
 
             GridCellScript cellScript = GameGridScript.Instance.GetGridCellScriptFromGridPos(targetCell);
 
+            _isAttacking = true;
             if (cellScript.isOccupied)
             {
                 return;
@@ -215,6 +220,7 @@ public class Enemy : MonoBehaviour
         {
             _moveProgress = 0;
             _isMoving = false;
+            _isAttacking = false;
             interpolatedPosition.x = _currentTargetPosition.x;
             interpolatedPosition.z = _currentTargetPosition.z;
         }
@@ -242,6 +248,7 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject, timeToClearOccupation + despawnTimer);
         StartCoroutine(ClearPreviousOccupation(_previousTargetGridCell));
         OnEnemyKilled.Invoke(gameObject);
+        _isAttacking = false;
     }
 
     private void EnablePhysics(bool enable)

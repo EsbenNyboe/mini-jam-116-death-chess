@@ -24,10 +24,10 @@ public class PlayerDamage : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (_timeSinceLastHit > invulnerabilityLength && other.gameObject.CompareTag("Enemy"))
+        if (_timeSinceLastHit > invulnerabilityLength && other.gameObject.CompareTag("EnemyAttack"))
         {
-            _timeSinceLastHit = 0;
             Enemy attackingEnemy = other.GetComponentInParent<Enemy>();
+            _timeSinceLastHit = 0;
             Vector3 attackingDirection = new Vector3(attackingEnemy.MoveAmountX, 0, attackingEnemy.MoveAmountY).normalized;
             // attackingDirection.y = 0.5f;
             CurrentForceOnPlayer = attackingDirection * forceMultiplier;
