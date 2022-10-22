@@ -266,11 +266,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e71442925e7b47a438a8b0ebad4d5dea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useRotationControls: 0
+  rotationSpeed: 10
+  rotationMin: -180
+  rotationMax: 0
+  autoShootInterval: 0
   projectileSpawn: {fileID: 1717119057167668227, guid: 89fe53625f606d3429aab27b62f8ea5f, type: 3}
   meleeSpawn: {fileID: 8786814547388624099, guid: 626e60f1989f2ba47b6c34efdb1817f0, type: 3}
   attackTransform: {fileID: 2124455236}
-  acceleration: 0.05
+  acceleration: 1
   decelaration: 0.5
+  maxSpeed: 5
   xMin: 3
   xMax: 9
   zMin: 0

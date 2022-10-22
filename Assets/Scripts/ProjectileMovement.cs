@@ -13,14 +13,21 @@ public class ProjectileMovement : MonoBehaviour
     [SerializeField] private BoxCollider boxCollider;
     [SerializeField] private float impactRadius;
 
+    private Vector3 _startTransformForward;
+
     void Start()
     {
-        Vector3 randomVector = new Vector3(50f, 50f, 50f);
+        float randomX = Random.Range(0, 90f);
+        float randomY = Random.Range(0, 90f);
+        float randomZ = Random.Range(0, 90f);
+        Vector3 randomVector = new Vector3(randomX, randomY, randomZ);
         rb.AddTorque(randomVector);
 
         Destroy(gameObject, timeToDestroy);
         
         FMODUnity.RuntimeManager.PlayOneShot("event:/Shoot", transform.position);
+
+        _startTransformForward = transform.forward;
     }
 
 
@@ -52,7 +59,10 @@ public class ProjectileMovement : MonoBehaviour
 
     private void ProjectileTrajectory()
     {
-        Vector3 projectilePath = new Vector3(-projectileSpeed, projectileHeight, 0);
-        transform.localPosition += projectilePath * Time.deltaTime;
+        // Vector3 projectilePath = new Vector3(-projectileSpeed, projectileHeight, 0);
+        // transform.localPosition += projectilePath * Time.deltaTime;
+        Vector3 projectilePath = projectileSpeed * _startTransformForward;
+        projectilePath = new Vector3(projectilePath.x, projectileHeight, projectilePath.z);
+        transform.localPosition += projectilePath *  Time.deltaTime;
     }
 }
