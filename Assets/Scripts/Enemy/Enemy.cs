@@ -35,6 +35,9 @@ public class Enemy : MonoBehaviour
     
     [SerializeField] private Rigidbody enemyRigidbody;
     private bool _isRagDoll;
+    private bool _isAlive = true;
+
+    public static Action<GameObject> OnEnemyKilled;
 
     private void Start()
     {
@@ -224,11 +227,15 @@ public class Enemy : MonoBehaviour
 
     public void GetKilled()
     {
+        if (_isAlive == false)
+            return;
+        _isAlive = false;
         if (animator) 
             animator.SetBool("isAlive", false);
         EnablePhysics(true);
         Destroy(gameObject, timeToClearOccupation + despawnTimer);
         StartCoroutine(ClearPreviousOccupation(_previousTargetGridCell));
+        OnEnemyKilled.Invoke(gameObject);
     }
 
     private void EnablePhysics(bool enable)

@@ -13,6 +13,7 @@ public class WaveSequence : ScriptableObject
         public int count;
         public float spawnWaitTime;
         public SerialLogicHelper.SerialLogic serialLogic;
+        public bool waitForClear;
     }
 
     public Wave[] Waves;
