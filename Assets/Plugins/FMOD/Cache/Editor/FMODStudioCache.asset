@@ -1,5 +1,29 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8751587058431715523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/GameplayMusicNew/Intensity
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 891217700
+    data2: 1511981915
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-4472624137367360860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54,6 +78,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1000
+--- !u!114 &-3844380651471344651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/GameplayMusicNew
+  m_EditorClassIdentifier: 
+  Path: event:/Music/GameplayMusicNew
+  Guid:
+    Data1: -2017036293
+    Data2: 1168921079
+    Data3: -451870573
+    Data4: -1444447509
+  Banks:
+  - {fileID: 1176748250486121812}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -8751587058431715523}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 17000
 --- !u!114 &-1086826102103411210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,10 +121,10 @@ MonoBehaviour:
   Path: FmodDeathchessProjects/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638019946547615511
+  lastModified: 638020749444841033
   FileSizes:
   - Name: Desktop
-    Value: 1120
+    Value: 1216
   Exists: 1
 --- !u!114 &-776203138809215864
 MonoBehaviour:
@@ -126,12 +178,13 @@ MonoBehaviour:
   - {fileID: -3989305707165239475}
   - {fileID: 8801079018948888388}
   - {fileID: -4472624137367360860}
+  - {fileID: -3844380651471344651}
   EditorParameters: []
   MasterBanks:
   - {fileID: 1176748250486121812}
   StringsBanks:
   - {fileID: -1086826102103411210}
-  cacheTime: 638019946547615511
+  cacheTime: 638020749444841033
   cacheVersion: 131592
 --- !u!114 &1176748250486121812
 MonoBehaviour:
@@ -148,10 +201,10 @@ MonoBehaviour:
   Path: FmodDeathchessProjects/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638019946547584308
+  lastModified: 638020749444821016
   FileSizes:
   - Name: Desktop
-    Value: 2175328
+    Value: 5109152
   Exists: 1
 --- !u!114 &2151811921115973644
 MonoBehaviour:
