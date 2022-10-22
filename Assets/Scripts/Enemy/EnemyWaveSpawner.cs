@@ -145,27 +145,19 @@ public class EnemyWaveSpawner : MonoBehaviour
     
     private void MusicTriggerOnWaveStarted()
     {
-        switch (_currentWave.onStartMusicTrigger)
-        {
-            case WaveSequence.MusicTriggerOnStart.None:
-                break;
-            case WaveSequence.MusicTriggerOnStart.HighA:
-                // insert FMOD stuff
-                Debug.Log("Clear High");
-                break;
-        }
+        // FMOD stuff:  _currentWave.musicIntensity
     }
 
     private void MusicTriggerOnClear()
     {
-        switch (_currentWave.onClearMusicTrigger)
-        {
-            case WaveSequence.MusicTriggerOnClear.None:
-                break;
-            case WaveSequence.MusicTriggerOnClear.LowA:
-                // insert FMOD stuff
-                Debug.Log("Clear Low");
-                break;
-        }
+        // switch (_currentWave.onClearMusicTrigger)
+        // {
+        //     case WaveSequence.MusicTriggerOnClear.None:
+        //         break;
+        //     case WaveSequence.MusicTriggerOnClear.LowA:
+        //         // insert FMOD stuff
+        //         Debug.Log("Clear Low");
+        //         break;
+        // }
     }
 }

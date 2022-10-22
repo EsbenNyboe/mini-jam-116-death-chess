@@ -14,8 +14,8 @@ public class WaveSequence : ScriptableObject
         public float spawnWaitTime;
         public SerialLogicHelper.SerialLogic serialLogic;
         public bool waitForClear;
-        public MusicTriggerOnStart onStartMusicTrigger;
-        public MusicTriggerOnClear onClearMusicTrigger;
+        [Range(-1,1)]
+        public float musicIntensity = -1;
     }
 
     public Wave[] Waves;
@@ -28,6 +28,9 @@ public class WaveSequence : ScriptableObject
     public enum MusicTriggerOnClear
     {
         None,
-        LowA
+        LowA,
+        LowB,
+        LowC,
+        LowD
     }
 }
