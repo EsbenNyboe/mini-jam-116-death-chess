@@ -142,6 +142,9 @@ public class Enemy : MonoBehaviour
                 targetCell.y = currentGridCell.y + gridMovePattern.y;
             }
 
+            targetCell.x = Mathf.Clamp(targetCell.x, 0, GameGridScript.Instance.height);
+            targetCell.y = Mathf.Clamp(targetCell.y, 0, GameGridScript.Instance.width);
+
             GridCellScript cellScript = GameGridScript.Instance.GetGridCellScriptFromGridPos(targetCell);
 
             if (cellScript.isOccupied)
