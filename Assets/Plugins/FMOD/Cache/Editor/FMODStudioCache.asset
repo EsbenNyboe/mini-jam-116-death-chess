@@ -121,7 +121,7 @@ MonoBehaviour:
   Path: FmodDeathchessProjects/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638020749444841033
+  lastModified: 638020757900506581
   FileSizes:
   - Name: Desktop
     Value: 1216
@@ -184,7 +184,7 @@ MonoBehaviour:
   - {fileID: 1176748250486121812}
   StringsBanks:
   - {fileID: -1086826102103411210}
-  cacheTime: 638020749444841033
+  cacheTime: 638020757900506581
   cacheVersion: 131592
 --- !u!114 &1176748250486121812
 MonoBehaviour:
@@ -201,10 +201,10 @@ MonoBehaviour:
   Path: FmodDeathchessProjects/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638020749444821016
+  lastModified: 638020757900473628
   FileSizes:
   - Name: Desktop
-    Value: 5109152
+    Value: 5109120
   Exists: 1
 --- !u!114 &2151811921115973644
 MonoBehaviour:
