@@ -43,7 +43,7 @@ public class ProjectileMovement : MonoBehaviour
                 boxCollider.size = new Vector3(impactRadius, impactRadius, impactRadius);
                 FMODUnity.RuntimeManager.PlayOneShot("event:/EnemyHit", other.transform.position);
                 other.rigidbody.detectCollisions = false;
-                other.gameObject.GetComponentInParent<EnemyMovementPawn>().GetKilled();
+                other.gameObject.GetComponentInParent<Enemy>().GetKilled();
                 
                 UIManager.Instance.AddToScore(1);
                 break;
