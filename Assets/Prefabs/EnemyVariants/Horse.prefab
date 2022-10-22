@@ -21,7 +21,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1238535184778897498, guid: bc3965278d0dd3d4991fdb04d6cc82d9, type: 3}
       propertyPath: jumpGravity
-      value: 0.3
+      value: 0.32
       objectReference: {fileID: 0}
     - target: {fileID: 1238535184778897498, guid: bc3965278d0dd3d4991fdb04d6cc82d9, type: 3}
       propertyPath: gridMovePattern.x

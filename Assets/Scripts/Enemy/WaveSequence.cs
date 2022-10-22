@@ -13,7 +13,21 @@ public class WaveSequence : ScriptableObject
         public int count;
         public float spawnWaitTime;
         public SerialLogicHelper.SerialLogic serialLogic;
+        public bool waitForClear;
+        public MusicTriggerOnStart onStartMusicTrigger;
+        public MusicTriggerOnClear onClearMusicTrigger;
     }
 
     public Wave[] Waves;
+
+    public enum MusicTriggerOnStart
+    {
+        None,
+        HighA
+    }
+    public enum MusicTriggerOnClear
+    {
+        None,
+        LowA
+    }
 }

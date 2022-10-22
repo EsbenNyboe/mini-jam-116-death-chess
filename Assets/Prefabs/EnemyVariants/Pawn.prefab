@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1238535184778897498, guid: bc3965278d0dd3d4991fdb04d6cc82d9, type: 3}
+      propertyPath: chasePlayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2738242798039725613, guid: bc3965278d0dd3d4991fdb04d6cc82d9, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -53,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3263950834913619095, guid: bc3965278d0dd3d4991fdb04d6cc82d9, type: 3}
       propertyPath: m_Name
-      value: EnemyPawn
+      value: Pawn
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc3965278d0dd3d4991fdb04d6cc82d9, type: 3}
