@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{942d96e1-aca2-4c36-844e-1c4ace97e4c5}">
 		<property name="assetPath">
-			<value>Music/Synth Alt 4 [2022-10-02 222926].wav</value>
+			<value>Music/Old Music/Synth Alt 4 [2022-10-02 222926].wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{69938291-6275-447e-a6cd-9debea461ef6}">
 		<property name="assetPath">
-			<value>Music/Breakbeat ALT 8 [2022-10-02 222909].wav</value>
+			<value>Music/Old Music/Breakbeat ALT 8 [2022-10-02 222909].wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

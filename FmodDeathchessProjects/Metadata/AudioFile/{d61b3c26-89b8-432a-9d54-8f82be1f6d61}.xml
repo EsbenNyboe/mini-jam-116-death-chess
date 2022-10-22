@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{d61b3c26-89b8-432a-9d54-8f82be1f6d61}">
 		<property name="assetPath">
-			<value>Music/FX_BestClapInTheWorld [2022-10-02 223500].wav</value>
+			<value>Music/Old Music/FX_BestClapInTheWorld [2022-10-02 223500].wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

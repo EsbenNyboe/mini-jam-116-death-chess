@@ -11,7 +11,6 @@ public class MainMenu : MonoBehaviour
     private void Awake()
     {
         scene = SceneManager.GetActiveScene();
-        OnSceneLoaded(scene);
     }
 
     public void PlayGame()
