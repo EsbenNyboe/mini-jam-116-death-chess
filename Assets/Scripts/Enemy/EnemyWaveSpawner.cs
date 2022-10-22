@@ -145,7 +145,11 @@ public class EnemyWaveSpawner : MonoBehaviour
     
     private void MusicTriggerOnWaveStarted()
     {
-        // FMOD stuff:  _currentWave.musicIntensity
+        if (_currentWave.musicIntensity < 0)
+        {
+            return;
+        }
+        AudioManager.Instance.MusicTrigger(_currentWave.musicIntensity);
     }
 
     private void MusicTriggerOnClear()

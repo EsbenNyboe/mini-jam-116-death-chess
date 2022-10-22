@@ -5,20 +5,15 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    // public static AudioManager Instance;
-    // private void Awake()
-    // {
-    //     if (Instance)
-    //     {
-    //         if (Instance != this)
-    //         {
-    //             Destroy(gameObject);
-    //         }
-    //     }
-    //     else
-    //     {
-    //         Instance = this;
-    //         DontDestroyOnLoad(gameObject);
-    //     }
-    // }
+    [SerializeField] private FMODUnity.StudioEventEmitter eventEmitter;
+    public static AudioManager Instance;
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+    public void MusicTrigger(float intensity)
+    {
+        eventEmitter.EventInstance.setParameterByName("Intensity", intensity);
+    }
 }

@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &291580554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,18 +190,20 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 2035726900
-      Data2: 1306178186
-      Data3: -2126969173
-      Data4: -301796264
-    Path: event:/Music/GameplayMusic
+      Data1: -2017036293
+      Data2: 1168921079
+      Data3: -451870573
+      Data4: -1444447509
+    Path: event:/Music/GameplayMusicNew
   Event: 
   PlayEvent: 1
   StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
-  Params: []
+  Params:
+  - Name: Intensity
+    Value: 0
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
@@ -217,6 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbaed5e5c64a4074ba26501a0c7e5a80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventEmitter: {fileID: 291580556}
 --- !u!1 &1362350954
 GameObject:
   m_ObjectHideFlags: 0
