@@ -6,6 +6,9 @@ public class PlayerControls : MonoBehaviour
 {
     float _moveHorizontal = 0f;
     float _moveVertical = 0f;
+    [Range(0.0001f,0.3f)]
+    [SerializeField] private float autoShootInterval;
+    private float _autoShootTimer;
     [SerializeField] GameObject projectileSpawn;
     [SerializeField] GameObject meleeSpawn;
     [SerializeField] Transform attackTransform;
@@ -41,11 +44,33 @@ public class PlayerControls : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            GameObject projectile = Instantiate(projectileSpawn,
-                attackTransform.position,
-                Random.rotation);
-            projectile.SetActive(true);
+            SpawnProjectile();
         }
+
+        if (autoShootInterval <= 0)
+        {
+            return;
+        }
+
+        _autoShootTimer += Time.deltaTime;
+        
+        if (_autoShootTimer >= autoShootInterval)
+        {
+            if (Input.GetKey(KeyCode.Space))
+            {
+                _autoShootTimer = 0f;
+                SpawnProjectile();
+            }
+        }
+
+    }
+
+    private void SpawnProjectile()
+    {
+        GameObject projectile = Instantiate(projectileSpawn,
+            attackTransform.position,
+            Random.rotation);
+        projectile.SetActive(true);
     }
 
     void PlayerFlatMovement()
