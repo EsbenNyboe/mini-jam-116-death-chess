@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{8e20ccad-ae5f-4cca-9638-9cc47eee00d2}">
 		<property name="assetPath">
-			<value>Music/90_C#_PianoChords_1_SP_417 [2022-10-02 223204].wav</value>
+			<value>Music/Old Music/90_C#_PianoChords_1_SP_417 [2022-10-02 223204].wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

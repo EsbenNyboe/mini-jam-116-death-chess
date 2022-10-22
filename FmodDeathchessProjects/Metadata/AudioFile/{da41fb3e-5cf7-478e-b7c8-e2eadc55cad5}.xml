@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{da41fb3e-5cf7-478e-b7c8-e2eadc55cad5}">
+		<property name="assetPath">
+			<value>Music/New Music/Music_Low_Var01/Music_Layer_01_Strings_02.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>21.942857142857143</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{43badae5-e16c-47df-9693-00c5a3633ebe}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{fe8be23b-9c1a-45c3-ab14-bf99199a692f}">
 		<property name="assetPath">
-			<value>Music/140_Bass_Ghostek_SP10 [2022-10-02 222911].wav</value>
+			<value>Music/Old Music/140_Bass_Ghostek_SP10 [2022-10-02 222911].wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
