@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour
 
     private Scene scene;
 
-    private void awake()
+    private void Awake()
     {
         scene = SceneManager.GetActiveScene();
         OnSceneLoaded(scene);
