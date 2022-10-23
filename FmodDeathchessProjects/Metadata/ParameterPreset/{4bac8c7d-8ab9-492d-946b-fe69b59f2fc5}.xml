@@ -16,16 +16,17 @@
 			<value>2</value>
 		</property>
 		<property name="maximum">
-			<value>4</value>
+			<value>8</value>
 		</property>
 		<property name="enumerationLabels">
 			<value>None</value>
 			<value>LowA</value>
 			<value>LowB</value>
+			<value>LowC</value>
 			<value>HighA</value>
-		</property>
-		<property name="isGlobal">
-			<value>true</value>
+			<value>HighB</value>
+			<value>HighC</value>
+			<value>BossA</value>
 		</property>
 		<property name="initialValue">
 			<value>0</value>
