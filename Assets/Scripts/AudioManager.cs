@@ -28,13 +28,16 @@ public class AudioManager : MonoBehaviour
                 intensityLabel = "LowB";
                 break;
             case MusicTriggerOnWaveStart.LowC:
+                intensityLabel = "LowC";
                 break;
             case MusicTriggerOnWaveStart.HighA:
                 intensityLabel = "HighA";
                 break;
             case MusicTriggerOnWaveStart.HighB:
+                intensityLabel = "HighB";
                 break;
             case MusicTriggerOnWaveStart.HighC:
+                intensityLabel = "HighC";
                 break;
             case MusicTriggerOnWaveStart.BossA:
                 break;

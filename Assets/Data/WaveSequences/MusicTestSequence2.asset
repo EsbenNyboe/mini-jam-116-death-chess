@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5eac186c85a4b9ca99e832308119841, type: 3}
-  m_Name: MusicTestSequence
+  m_Name: MusicTestSequence2
   m_EditorClassIdentifier: 
   showWaveGroups: 0
-  showIndividualMenus: 0
+  showIndividualMenus: 1
   resetMenus: 0
-  displayState: 3
+  displayState: 2
   Waves:
   - waveGroupIndex: 0
     showWaveGroupIndex: 0
-    hideState: 0
+    hideState: 1
     displayState: 3
     _displayStateCache: 3
     enemy: {fileID: 1542095816487866970, guid: 9beff3465707ef9488114bc689f89343, type: 3}
@@ -33,7 +33,21 @@ MonoBehaviour:
     musicTriggerOnWaveStart: 1
   - waveGroupIndex: 0
     showWaveGroupIndex: 0
-    hideState: 0
+    hideState: 1
+    displayState: 3
+    _displayStateCache: 3
+    enemy: {fileID: 0}
+    showMenu: 1
+    count: 1
+    spawnWaitTime: 1
+    serialLogic: 2
+    gridIndex: -1
+    waitForClear: 0
+    newWaveGroup: 0
+    musicTriggerOnWaveStart: 2
+  - waveGroupIndex: 0
+    showWaveGroupIndex: 0
+    hideState: 1
     displayState: 3
     _displayStateCache: 3
     enemy: {fileID: 4568105318851863581, guid: 4b3475745bac07c49b7bdc7510ae7a7f, type: 3}
@@ -44,24 +58,38 @@ MonoBehaviour:
     gridIndex: -1
     waitForClear: 1
     newWaveGroup: 0
-    musicTriggerOnWaveStart: 2
+    musicTriggerOnWaveStart: 0
   - waveGroupIndex: 0
     showWaveGroupIndex: 0
-    hideState: 0
+    hideState: 1
+    displayState: 2
+    _displayStateCache: 2
+    enemy: {fileID: 0}
+    showMenu: 1
+    count: 1
+    spawnWaitTime: 3
+    serialLogic: 2
+    gridIndex: -1
+    waitForClear: 0
+    newWaveGroup: 0
+    musicTriggerOnWaveStart: 4
+  - waveGroupIndex: 0
+    showWaveGroupIndex: 0
+    hideState: 1
     displayState: 3
     _displayStateCache: 3
     enemy: {fileID: 8651513445187116777, guid: 33f5791f4f8b5184b989247714912765, type: 3}
     showMenu: 0
-    count: 3
+    count: 11
     spawnWaitTime: 0.2
     serialLogic: 2
     gridIndex: -1
     waitForClear: 1
     newWaveGroup: 0
-    musicTriggerOnWaveStart: 3
+    musicTriggerOnWaveStart: 0
   - waveGroupIndex: 0
     showWaveGroupIndex: 0
-    hideState: 0
+    hideState: 1
     displayState: 3
     _displayStateCache: 3
     enemy: {fileID: 926642184904297376, guid: 7d48d7af515fec5408d1ffb3c087d3c4, type: 3}
@@ -72,10 +100,10 @@ MonoBehaviour:
     gridIndex: -1
     waitForClear: 1
     newWaveGroup: 0
-    musicTriggerOnWaveStart: 4
+    musicTriggerOnWaveStart: 6
   - waveGroupIndex: 0
     showWaveGroupIndex: 0
-    hideState: 0
+    hideState: 1
     displayState: 3
     _displayStateCache: 3
     enemy: {fileID: 939702594336390790, guid: 95995c1525559a941ab7946d3dec8bad, type: 3}
@@ -86,10 +114,10 @@ MonoBehaviour:
     gridIndex: -1
     waitForClear: 1
     newWaveGroup: 0
-    musicTriggerOnWaveStart: 5
+    musicTriggerOnWaveStart: 0
   - waveGroupIndex: 0
     showWaveGroupIndex: 0
-    hideState: 0
+    hideState: 1
     displayState: 3
     _displayStateCache: 3
     enemy: {fileID: 3373812082633973840, guid: 7bfd83399ca06e44dbe19302f300ecc3, type: 3}
@@ -100,4 +128,18 @@ MonoBehaviour:
     gridIndex: -1
     waitForClear: 1
     newWaveGroup: 0
-    musicTriggerOnWaveStart: 6
+    musicTriggerOnWaveStart: 0
+  - waveGroupIndex: 0
+    showWaveGroupIndex: 0
+    hideState: 1
+    displayState: 2
+    _displayStateCache: 2
+    enemy: {fileID: 0}
+    showMenu: 1
+    count: 1
+    spawnWaitTime: 5
+    serialLogic: 2
+    gridIndex: -1
+    waitForClear: 0
+    newWaveGroup: 0
+    musicTriggerOnWaveStart: 2
