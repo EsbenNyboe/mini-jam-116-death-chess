@@ -121,8 +121,15 @@ public class EnemyWaveSpawner : MonoBehaviour
 
     private void SpawnEnemyNew()
     {
-        _spawnIndex = SerialLogicHelper.RollNewIndex(_gameGridScript.height, 
-            _currentWave.serialLogic, _spawnIndex);
+        if (_currentWave.gridIndex >= 0 && _currentWave.gridIndex < _gameGridScript.height)
+        {
+            _spawnIndex = _currentWave.gridIndex;
+        }
+        else
+        {
+            _spawnIndex = SerialLogicHelper.RollNewIndex(_gameGridScript.height, 
+                _currentWave.serialLogic, _spawnIndex);
+        }
 
         GridCellScript gridCellScript = _gameGridScript.GetGridCellScriptFromGridPos(new Vector2Int(0, _spawnIndex));
         if (gridCellScript.isOccupied)
